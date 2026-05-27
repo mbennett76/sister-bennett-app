@@ -2300,28 +2300,30 @@ export default function App(){
               return(
                 <button key={t.id} onClick={()=>{setTab(t.id);setShowCert(false);}}
                   style={{
-                    flexShrink:0,width:"96px",background:active?C.bg:"rgba(255,255,255,0.08)",
-                    border:active?`2px solid ${C.gold}`:"1px solid rgba(255,255,255,0.15)",
-                    borderRadius:"12px 12px 0 0",borderBottom:active?"2px solid "+C.bg:"none",
+                    flexShrink:0,width:"96px",
+                    background:active?C.bg:"rgba(0,0,0,0.45)",
+                    border:active?`2px solid ${C.gold}`:`1px solid rgba(255,255,255,0.25)`,
+                    borderRadius:"12px 12px 0 0",
+                    borderBottom:active?"2px solid "+C.bg:"1px solid rgba(255,255,255,0.25)",
                     padding:"10px 6px 8px",cursor:"pointer",textAlign:"center",
                     transition:"all 0.15s",
-                    boxShadow:active?"0 -2px 8px rgba(0,0,0,0.15)":"none",
+                    boxShadow:active?"0 -2px 8px rgba(0,0,0,0.2)":"none",
                   }}>
                   {/* Icon */}
                   <div style={{fontSize:"20px",lineHeight:1,marginBottom:"5px"}}>{t.icon}</div>
-                  {/* Portuguese label — larger, prominent */}
+                  {/* Portuguese label */}
                   <div style={{
                     fontSize:"12px",fontWeight:"600",lineHeight:1.2,marginBottom:"3px",
-                    color:active?C.green:"rgba(248,242,228,0.9)",
+                    color:active?C.green:"#FFFFFF",
                     fontFamily:"Georgia,serif",whiteSpace:"nowrap",
                   }}>{t.pt}</div>
                   {/* English label */}
                   <div style={{
                     fontSize:"10px",fontWeight:"400",lineHeight:1.2,marginBottom:"4px",
-                    color:active?C.muted:"rgba(248,242,228,0.55)",
+                    color:active?C.muted:"rgba(255,255,255,0.75)",
                     whiteSpace:"nowrap",
                   }}>{t.en}</div>
-                  {/* Active indicator dot */}
+                  {/* Active indicator bar */}
                   {active&&(
                     <div style={{
                       width:"18px",height:"3px",borderRadius:"2px",
