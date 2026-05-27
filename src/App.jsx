@@ -1490,101 +1490,426 @@ function LearningPathView({streak,alphaData,phraseData,vocabData,cultureData,rea
 
 
 // ══════════════════════════════════════════════════════════════════════════════
-//  PHASE 4 — SCRIPTURE STUDY DATA
+//  PHASE 4 — SCRIPTURE STUDY DATA  (expanded from Preach My Gospel references)
 // ══════════════════════════════════════════════════════════════════════════════
 const SCRIPTURE_BOOKS = [
-  { id:"bom",  label:"Livro de Mórmon", sublabel:"Book of Mormon", icon:"📗", color:"#046A38",
+  // ── LIVRO DE MÓRMON ───────────────────────────────────────────────────────
+  { id:"bom", label:"Livro de Mórmon", sublabel:"Book of Mormon", icon:"📗", color:"#046A38",
     chapters:[
-      { ref:"1 Néfi 3:7", topic:"Obediência",
-        verses:[
-          {pt:"E aconteceu que eu, Néfi, disse ao meu pai: Irei e farei as coisas que o Senhor ordenou, pois sei que o Senhor não dá mandamentos aos filhos dos homens sem preparar-lhes o caminho pelo qual possam cumprir aquilo que lhes ordenou.",
-           en:"I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them."}
-        ]
-      },
-      { ref:"Alma 32:21", topic:"Fé",
-        verses:[
-          {pt:"E assim como eu vos disse que não podíeis ter o conhecimento das coisas passadas, assim também não podeis ter o perfeito conhecimento agora; pois bem-aventurado é aquele que tem fé em mim depois de me ter visto, e o que não viu e ainda crê em mim, bem-aventurado é.",
-           en:"Faith is not to have a perfect knowledge of things; therefore if ye have faith ye hope for things which are not seen, which are true."}
-        ]
-      },
-      { ref:"Moroni 7:47", topic:"Caridade",
-        verses:[
-          {pt:"Mas a caridade é o amor puro de Cristo, e dura para sempre; e quem a possuir no último dia, estará bem.",
-           en:"Charity is the pure love of Christ, and it endureth forever; and whoso is found possessed of it at the last day, it shall be well with him."}
-        ]
-      },
-      { ref:"Moroni 10:3–5", topic:"Promessa de Moroni",
-        verses:[
-          {pt:"Eis que eu vos exorto a que, quando tiverdes recebido essas coisas, pergunteis a Deus, o Eterno Pai, em nome de Cristo, se estas coisas não são verdadeiras;",
-           en:"Behold, I would exhort you that when ye shall read these things, that ye would ask God, the Eternal Father, in the name of Christ, if these things are not true;"},
-          {pt:"e se perguntardes com sincero coração, com real intenção, tendo fé em Cristo, Ele vos manifestará a verdade, por meio do poder do Espírito Santo.",
-           en:"and if ye shall ask with a sincere heart, with real intent, having faith in Christ, he will manifest the truth of it unto you, by the power of the Holy Ghost."},
-          {pt:"E pelo poder do Espírito Santo podeis conhecer a verdade de todas as coisas.",
-           en:"And by the power of the Holy Ghost ye may know the truth of all things."},
-        ]
-      },
-      { ref:"3 Néfi 11:10–11", topic:"Jesus Cristo",
-        verses:[
-          {pt:"Eis que sou Jesus Cristo, de quem os profetas testemunharam que viria ao mundo.",
-           en:"Behold, I am Jesus Christ, whom the prophets testified shall come into the world."},
+      { ref:"1 Néfi 3:7", topic:"Obediência — I Will Go and Do",
+        verses:[{
+          pt:"Irei e farei as coisas que o Senhor ordenou, pois sei que o Senhor não dá mandamentos aos filhos dos homens sem preparar-lhes o caminho pelo qual possam cumprir aquilo que lhes ordenou.",
+          en:"I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them."}]},
+      { ref:"2 Néfi 2:25", topic:"A Queda e a Alegria",
+        verses:[{
+          pt:"Adão caiu para que os homens existissem; e os homens existem para que possam ter alegria.",
+          en:"Adam fell that men might be; and men are, that they might have joy."}]},
+      { ref:"2 Néfi 9:20–21", topic:"O Poder Infinito de Cristo",
+        verses:[{
+          pt:"Ó quão grande a santidade de nosso Deus! Pois Ele conhece todas as coisas e não há nada que Ele não saiba.",
+          en:"O how great the holiness of our God! For he knoweth all things, and there is not anything save he knows it."},
+          {pt:"E Ele vem ao mundo para que possa salvar todos os homens, se ouvirem a Sua voz; pois eis que Ele sofre as dores de todos os homens, sim, as dores de cada criatura vivente.",
+          en:"And he cometh into the world that he may save all men if they will hearken unto his voice; for behold, he suffereth the pains of all men, yea, the pains of every living creature."}]},
+      { ref:"2 Néfi 25:23", topic:"Graça e Esforço",
+        verses:[{
+          pt:"Pois sabemos que é pela graça que somos salvos, depois de tudo o que podemos fazer.",
+          en:"For we know that it is by grace that we are saved, after all we can do."}]},
+      { ref:"2 Néfi 31:17–18", topic:"O Caminho para a Vida Eterna",
+        verses:[{
+          pt:"Por isso, fazei as coisas que vos disse que vosso Pai ordenou. E isto é a palavra do Pai e a palavra do Filho ao mesmo tempo — arrependei-vos, todos os confins da terra, e vinde a Mim, e sede batizados em Meu nome.",
+          en:"Wherefore, do the things which I have told you I have seen that your Father shall do; and this is the word of the Father — repent ye, repent ye, and be baptized in the name of my Beloved Son."},
+          {pt:"E agora, eis que Minha bienamada, vou dizer-vos que a porta pela qual deveis entrar é o arrependimento e o batismo em água; e então vem a remissão dos vossos pecados pelo fogo e pelo Espírito Santo.",
+          en:"And now, my beloved brethren, after ye have gotten into this strait and narrow path, I would ask if all is done? Behold, I say unto you, Nay; for ye have not come thus far save it were by the word of Christ with unshaken faith in him, relying wholly upon the merits of him who is mighty to save."}]},
+      { ref:"2 Néfi 31:20", topic:"Pressionar em Frente",
+        verses:[{
+          pt:"Assim, amados irmãos e irmãs, ide com perseverança na vereda que leva à vida eterna, depois de haverdes entrado pela estreita porta, tendo recebido o Santo Espírito, o qual leva ao Pai; assim, pressionai avante com firmeza em Cristo, tendo um brilho perfeito de esperança e amor a Deus e a todos os homens.",
+          en:"Wherefore, ye must press forward with a steadfastness in Christ, having a perfect brightness of hope, and a love of God and of all men. Wherefore, if ye shall press forward, feasting upon the word of Christ, and endure to the end, behold, thus saith the Father: Ye shall have eternal life."}]},
+      { ref:"Enos 1:3–5", topic:"Oração Sincera",
+        verses:[{
+          pt:"Eis que fui ao caçar animais na floresta; e as palavras que ouvira meu pai falar muitas vezes, concernentes à vida eterna e ao gozo dos santos, mergulharam fundo em meu coração.",
+          en:"Behold, I went to hunt beasts in the forests; and the words which I had often heard my father speak concerning eternal life, and the joy of the saints, sunk deep into my heart."},
+          {pt:"E minha alma teve fome; e ajoelhei perante o meu Criador e clamei a Ele em oração poderosa e súplica pela minha própria alma; e clamei a Ele durante todo o dia.",
+          en:"And my soul hungered; and I kneeled down before my Maker, and I cried unto him in mighty prayer and supplication for mine own soul; and all the day long did I cry unto him; yea, and when the night came I did still raise my voice high that it reached the heavens."},
+          {pt:"E veio-me uma voz, dizendo: Enos, os teus pecados são perdoados e serás abençoado.",
+          en:"And there came a voice unto me, saying: Enos, thy sins are forgiven thee, and thou shalt be blessed."}]},
+      { ref:"Mosias 2:17", topic:"Serviço",
+        verses:[{
+          pt:"E eis que eu vos digo que estas coisas são sábias e verdadeiras. E o rei Benjamim continuou a falar-lhes, dizendo: Aprendi que quando estais ao serviço dos vossos semelhantes estais apenas ao serviço do vosso Deus.",
+          en:"And behold, I tell you these things that ye may learn wisdom; that ye may learn that when ye are in the service of your fellow beings ye are only in the service of your God."}]},
+      { ref:"Mosias 3:17", topic:"Salvação por Cristo",
+        verses:[{
+          pt:"E além disso, o Senhor Todo-Poderoso decretou que a salvação viria para os filhos dos homens somente no e mediante o nome de Cristo, o Senhor Todo-Poderoso.",
+          en:"And moreover, I say unto you, that there shall be no other name given nor any other way nor means whereby salvation can come unto the children of men, only in and through the name of Christ, the Lord Omnipotent."}]},
+      { ref:"Alma 5:14", topic:"Renascimento Espiritual",
+        verses:[{
+          pt:"E agora vos pergunto, irmãos meus bem-amados, fostes espiritualmente nascidos de Deus? Recebestes a imagem de Deus gravada nos vossos rostos? Experimentastes esta transformação no vosso coração?",
+          en:"And now behold, I ask of you, my brethren of the church, have ye spiritually been born of God? Have ye received his image in your countenances? Have ye experienced this mighty change in your hearts?"}]},
+      { ref:"Alma 7:11–12", topic:"A Expiação",
+        verses:[{
+          pt:"E Ele irá e sofrerá as dores, as doenças e as enfermidades de Seu povo.",
+          en:"And he shall go forth, suffering pains and afflictions and temptations of every kind; and this that the word might be fulfilled which saith he will take upon him the pains and the sicknesses of his people."},
+          {pt:"E Ele tomará sobre Si a morte, para que possa soltar os laços da morte que prendem o Seu povo; e tomará sobre Si as suas enfermidades, para que o Seu ventre seja cheio de misericórdia.",
+          en:"And he will take upon him death, that he may loose the bands of death which bind his people; and he will take upon him their infirmities, that his bowels may be filled with mercy, according to the flesh, that he may know according to the flesh how to succor his people according to their infirmities."}]},
+      { ref:"Alma 11:43–44", topic:"A Ressurreição",
+        verses:[{
+          pt:"O espírito e o corpo serão reunidos em sua forma perfeita; tanto os membros como as juntas serão restaurados ao seu lugar certo — sim, não ficará um só cabelo de suas cabeças a ser perdido.",
+          en:"The spirit and the body shall be reunited again in its perfect form; both limb and joint shall be restored to its proper frame, even as we now are at this time; and we shall be brought to stand before God, knowing even as we know now, and have a bright recollection of all our guilt."}]},
+      { ref:"Alma 32:27", topic:"Experimentar a Fé",
+        verses:[{
+          pt:"Mas eis que se não podeis fazer mais que desejar crer, deixai que esse desejo trabalhe em vós, mesmo até acreditardes de maneira que possais dar lugar a uma parte das palavras de Deus.",
+          en:"But behold, if ye will awake and arouse your faculties, even to an experiment upon my words, and exercise a particle of faith, yea, even if ye can no more than desire to believe, let this desire work in you, even until ye believe in a manner that ye can give place for a portion of my words."}]},
+      { ref:"Alma 34:32–33", topic:"Este Tempo É para o Arrependimento",
+        verses:[{
+          pt:"Pois eis que esta vida é o tempo para os homens se prepararem para enfrentar a Deus; sim, eis que o dia desta vida é o dia para os homens realizarem as suas obras.",
+          en:"For behold, this life is the time for men to prepare to meet God; yea, behold the day of this life is the day for men to perform their labors."},
+          {pt:"E agora, como eu disse que vos tenho dito, procurai a Deus enquanto O podes encontrar; porque depois desta vida chegará a noite das trevas em que não pode ser realizado trabalho algum.",
+          en:"And now, as I said unto you before, as ye have had so many witnesses, therefore, I beseech of you that ye do not procrastinate the day of your repentance until the end; for after this day of life, which is given us to prepare for eternity, behold, if we do not improve our time while in this life, then cometh the night of darkness wherein there can be no labor performed."}]},
+      { ref:"Alma 36:3", topic:"Confiança no Senhor",
+        verses:[{
+          pt:"Pois quero que saibas que assim como o Senhor viveu, assim vos digo que todo aquele que confiar no Senhor prosperará nesta terra.",
+          en:"And now, O my son Helaman, behold, thou art in thy youth, and therefore, I beseech of thee that thou wilt hear my words and learn of me; for I do know that whosoever shall put their trust in God shall be supported in their trials, and their troubles, and their afflictions, and shall be lifted up at the last day."}]},
+      { ref:"Alma 37:6–7", topic:"Meios Pequenos e Simples",
+        verses:[{
+          pt:"Agora, não menosprezeis as pequenas coisas; pois às vezes, por meios pequenos e simples, grandes coisas são levadas a cabo; e pequenos meios confundem o sábio em muitos casos.",
+          en:"Now ye may suppose that this is foolishness in me; but behold I say unto you, that by small and simple things are great things brought to pass; and small means in many instances doth confound the wise."},
+          {pt:"E o Senhor Deus trabalha por meios de acordo com a Sua sabedoria infinita.",
+          en:"And the Lord God doth work by means to bring about his great and eternal purposes; and by very small means the Lord doth confound the wise and bringeth about the salvation of many souls."}]},
+      { ref:"3 Néfi 11:10–11", topic:"Jesus Cristo Aparece",
+        verses:[{
+          pt:"Eis que sou Jesus Cristo, de quem os profetas testemunharam que viria ao mundo.",
+          en:"Behold, I am Jesus Christ, whom the prophets testified shall come into the world."},
           {pt:"E eis que sou a luz e a vida do mundo; e bebi, do cálice amargo e derramei o meu sangue pelo mundo, para que todos quantos em mim crerem possam ser salvos.",
-           en:"And behold, I am the light and the life of the world; and I have drunk out of that bitter cup which the Father hath given me, and have glorified the Father in taking upon me the sins of the world."},
-        ]
-      },
+          en:"And behold, I am the light and the life of the world; and I have drunk out of that bitter cup which the Father hath given me, and have glorified the Father in taking upon me the sins of the world."}]},
+      { ref:"3 Néfi 27:20–21", topic:"O Evangelho de Jesus Cristo",
+        verses:[{
+          pt:"Ora esta é a palavra, e não há outra palavra dada além desta pela qual o homem possa ser salvo; pois o julgamento do homem justo é isso: que a sua obra é realizada no Meu nome, e que suas obras seguem depois dele.",
+          en:"Now this is the commandment: Repent, all ye ends of the earth, and come unto me and be baptized in my name, that ye may be sanctified by the reception of the Holy Ghost, that ye may stand spotless before me at the last day."},
+          {pt:"Portanto, Eu vos digo que precisais ser levados até ao Pai.",
+          en:"Verily, verily, I say unto you, this is my gospel; and ye know the things that ye must do in my church; for the works which ye have seen me do that shall ye also do; for that which ye have seen me do even that shall ye do."}]},
+      { ref:"Moroni 7:33", topic:"Fé para Fazer Milagres",
+        verses:[{
+          pt:"E Cristo disse: Se tiverdes fé em Mim, tereis poder para fazer todas as coisas que forem convenientes a Mim.",
+          en:"And Christ hath said: If ye will have faith in me ye shall have power to do whatsoever thing is expedient in me."}]},
+      { ref:"Moroni 7:47–48", topic:"Caridade — O Amor Puro de Cristo",
+        verses:[{
+          pt:"Mas a caridade é o amor puro de Cristo, e dura para sempre; e quem a possuir no último dia, estará bem com ele.",
+          en:"But charity is the pure love of Christ, and it endureth forever; and whoso is found possessed of it at the last day, it shall be well with him."},
+          {pt:"Por conseguinte, meus amados irmãos, orai ao Pai com toda a energia do vosso coração, para que possais ser cheios desse amor que Ele concedeu a todos os que são seguidores verdadeiros de Seu Filho Jesus Cristo.",
+          en:"Wherefore, my beloved brethren, pray unto the Father with all the energy of heart, that ye may be filled with this love, which he hath bestowed upon all who are true followers of his Son, Jesus Christ."}]},
+      { ref:"Moroni 10:3–5", topic:"Promessa de Moroni",
+        verses:[{
+          pt:"Eis que eu vos exorto a que, quando tiverdes recebido essas coisas, pergunteis a Deus, o Eterno Pai, em nome de Cristo, se estas coisas não são verdadeiras;",
+          en:"Behold, I would exhort you that when ye shall read these things, that ye would ask God, the Eternal Father, in the name of Christ, if these things are not true;"},
+          {pt:"e se perguntardes com sincero coração, com real intenção, tendo fé em Cristo, Ele vos manifestará a verdade, por meio do poder do Espírito Santo.",
+          en:"and if ye shall ask with a sincere heart, with real intent, having faith in Christ, he will manifest the truth of it unto you, by the power of the Holy Ghost."},
+          {pt:"E pelo poder do Espírito Santo podeis conhecer a verdade de todas as coisas.",
+          en:"And by the power of the Holy Ghost ye may know the truth of all things."}]},
+      { ref:"Alma 32:21", topic:"Definição da Fé",
+        verses:[{
+          pt:"E agora, assim como eu disse que a fé não é ter um conhecimento perfeito das coisas, assim também é com a minha palavra. Não podeis ter conhecimento perfeito agora, pois é por fé que esperais nas coisas que não são vistas, mas que são verdadeiras.",
+          en:"And now as I said concerning faith — faith is not to have a perfect knowledge of things; therefore if ye have faith ye hope for things which are not seen, which are true."}]},
     ]
   },
-  { id:"bible", label:"Bíblia Sagrada", sublabel:"Holy Bible", icon:"📘", color:"#1E4D8C",
+
+  // ── BÍBLIA SAGRADA — ANTIGO TESTAMENTO ────────────────────────────────────
+  { id:"ot", label:"Antigo Testamento", sublabel:"Old Testament", icon:"📜", color:"#5A5450",
     chapters:[
-      { ref:"Tiago 1:5", topic:"Sabedoria e Oração",
-        verses:[
-          {pt:"Se algum de vós tem falta de sabedoria, peça-a a Deus, que a todos dá liberalmente, sem fazer reproches; e ser-lhe-á dada.",
-           en:"If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him."}
-        ]
-      },
-      { ref:"João 3:16", topic:"Amor de Deus",
-        verses:[
-          {pt:"Porque Deus amou o mundo de tal maneira que deu o seu Filho Unigénito, para que todo o que nele crê não pereça, mas tenha a vida eterna.",
-           en:"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."}
-        ]
-      },
-      { ref:"Mateus 28:19–20", topic:"A Grande Comissão",
-        verses:[
-          {pt:"Ide, portanto, e fazei discípulos de todas as nações, batizando-os em nome do Pai, do Filho e do Espírito Santo;",
-           en:"Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost:"},
-          {pt:"ensinando-os a guardar todas as coisas que vos tenho ordenado; e eis que estou convosco todos os dias, até à consumação dos séculos.",
-           en:"Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you always, even unto the end of the world."},
-        ]
-      },
-      { ref:"Romanos 8:16", topic:"O Espírito Testifica",
-        verses:[
-          {pt:"O próprio Espírito testifica com o nosso espírito que somos filhos de Deus.",
-           en:"The Spirit itself beareth witness with our spirit, that we are the children of God."}
-        ]
-      },
+      { ref:"Génesis 1:26–27", topic:"O Homem à Imagem de Deus",
+        verses:[{
+          pt:"E disse Deus: Façamos o homem à nossa imagem, conforme a nossa semelhança; e domine sobre os peixes do mar, e sobre as aves dos céus, e sobre o gado, e sobre toda a terra.",
+          en:"And God said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth."},
+          {pt:"E criou Deus o homem à sua imagem; à imagem de Deus o criou; homem e mulher os criou.",
+          en:"So God created man in his own image, in the image of God created he him; male and female created he them."}]},
+      { ref:"Josué 24:15", topic:"Escolha a Quem Servirás",
+        verses:[{
+          pt:"Se, pois, vos parecer mal servir ao Senhor, escolhei hoje a quem servireis. Eu, porém, e a minha casa serviremos ao Senhor.",
+          en:"And if it seem evil unto you to serve the Lord, choose you this day whom ye will serve; but as for me and my house, we will serve the Lord."}]},
+      { ref:"1 Reis 19:11–12", topic:"A Voz Mansa e Delicada",
+        verses:[{
+          pt:"E eis que o Senhor passava, e um grande e forte vento fazia rachar os montes e quebrar as penhas diante do Senhor; mas o Senhor não estava no vento. E depois do vento, um tremor de terra; mas o Senhor não estava no tremor de terra.",
+          en:"And, behold, the Lord passed by, and a great and strong wind rent the mountains, and brake in pieces the rocks before the Lord; but the Lord was not in the wind: and after the wind an earthquake; but the Lord was not in the earthquake:"},
+          {pt:"E depois do tremor de terra, um fogo; mas o Senhor não estava no fogo. E depois do fogo, uma voz mansa e delicada.",
+          en:"And after the earthquake a fire; but the Lord was not in the fire: and after the fire a still small voice."}]},
+      { ref:"Salmo 46:10", topic:"Sede Quietos",
+        verses:[{
+          pt:"Sede quietos e sabei que Eu sou Deus; serei exaltado entre as nações, serei exaltado na terra.",
+          en:"Be still, and know that I am God: I will be exalted among the heathen, I will be exalted in the earth."}]},
+      { ref:"Isaías 1:18", topic:"Os Pecados Como a Escarlate",
+        verses:[{
+          pt:"Ora, pois, vinde, e arrazoemos juntos, diz o Senhor; se os vossos pecados forem como a escarlate, tornar-se-ão brancos como a neve; se forem vermelhos como o carmesim, ficarão como a lã.",
+          en:"Come now, and let us reason together, saith the Lord: though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool."}]},
+      { ref:"Isaías 55:8–9", topic:"Os Pensamentos de Deus São Mais Altos",
+        verses:[{
+          pt:"Porque os meus pensamentos não são os vossos pensamentos, nem os vossos caminhos, os meus caminhos, diz o Senhor.",
+          en:"For my thoughts are not your thoughts, neither are your ways my ways, saith the Lord."},
+          {pt:"Porque assim como os céus são mais altos do que a terra, assim são os meus caminhos mais altos do que os vossos caminhos, e os meus pensamentos, mais do que os vossos pensamentos.",
+          en:"For as the heavens are higher than the earth, so are my ways higher than your ways, and my thoughts than your thoughts."}]},
+      { ref:"Jeremias 1:5", topic:"Conhecido Antes do Nascimento",
+        verses:[{
+          pt:"Antes que te formasse no ventre, te conheci, e antes que saísses da madre, te santifiquei; às nações te dei por profeta.",
+          en:"Before I formed thee in the belly I knew thee; and before thou camest forth out of the womb I sanctified thee, and I ordained thee a prophet unto the nations."}]},
+      { ref:"Amós 3:7", topic:"Revelação por Profetas",
+        verses:[{
+          pt:"Porque o Senhor Deus não fará coisa alguma, sem ter revelado o seu segredo aos seus servos, os profetas.",
+          en:"Surely the Lord God will do nothing, but he revealeth his secret unto his servants the prophets."}]},
+      { ref:"Malaquias 4:5–6", topic:"O Retorno de Elias",
+        verses:[{
+          pt:"Eis que eu vos enviarei o profeta Elias, antes que venha o grande e terrível dia do Senhor.",
+          en:"Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of the Lord:"},
+          {pt:"E ele converterá o coração dos pais a seus filhos, e o coração dos filhos a seus pais.",
+          en:"And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse."}]},
     ]
   },
+
+  // ── BÍBLIA SAGRADA — NOVO TESTAMENTO ─────────────────────────────────────
+  { id:"bible", label:"Novo Testamento", sublabel:"New Testament", icon:"📘", color:"#1E4D8C",
+    chapters:[
+      { ref:"Mateus 3:16–17", topic:"O Batismo de Cristo",
+        verses:[{
+          pt:"E, sendo Jesus batizado, saiu logo da água, e eis que os céus se lhe abriram, e viu o Espírito de Deus descendo como pomba e vindo sobre Ele.",
+          en:"And Jesus, when he was baptized, went up straightway out of the water: and, lo, the heavens were opened unto him, and he saw the Spirit of God descending like a dove, and lighting upon him:"},
+          {pt:"E eis que uma voz dos céus que dizia: Este é o Meu Filho amado, em quem Me comprazo.",
+          en:"And lo a voice from heaven, saying, This is my beloved Son, in whom I am well pleased."}]},
+      { ref:"Mateus 5:48", topic:"Sede Perfeitos",
+        verses:[{
+          pt:"Sede vós, pois, perfeitos, como também o vosso Pai, que está nos céus, é perfeito.",
+          en:"Be ye therefore perfect, even as your Father which is in heaven is perfect."}]},
+      { ref:"Mateus 7:7–8", topic:"Pedi e Recebereis",
+        verses:[{
+          pt:"Pedi e dar-se-vos-á; buscai e encontrareis; batei e abrir-se-vos-á.",
+          en:"Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you:"},
+          {pt:"Porque aquele que pede recebe; e o que busca encontra; e ao que bate abrir-se-lhe-á.",
+          en:"For every one that asketh receiveth; and he that seeketh findeth; and to him that knocketh it shall be opened."}]},
+      { ref:"Mateus 22:36–40", topic:"Os Dois Grandes Mandamentos",
+        verses:[{
+          pt:"Mestre, qual é o grande mandamento na Lei? Jesus disse-lhe: Amarás o Senhor teu Deus de todo o teu coração, e de toda a tua alma, e de todo o teu entendimento.",
+          en:"Master, which is the great commandment in the law? Jesus said unto him, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind."},
+          {pt:"Este é o primeiro e grande mandamento. E o segundo, semelhante a este, é: Amarás o teu próximo como a ti mesmo.",
+          en:"This is the first and great commandment. And the second is like unto it, Thou shalt love thy neighbour as thyself."}]},
+      { ref:"Mateus 28:19–20", topic:"A Grande Comissão",
+        verses:[{
+          pt:"Ide, portanto, e fazei discípulos de todas as nações, batizando-os em nome do Pai, e do Filho, e do Espírito Santo;",
+          en:"Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost:"},
+          {pt:"ensinando-os a guardar todas as coisas que vos tenho ordenado; e eis que estou convosco todos os dias, até à consumação dos séculos.",
+          en:"Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you always, even unto the end of the world."}]},
+      { ref:"João 3:5", topic:"Nascer da Água e do Espírito",
+        verses:[{
+          pt:"Jesus respondeu: Em verdade, em verdade te digo que aquele que não nascer da água e do Espírito, não pode entrar no reino de Deus.",
+          en:"Jesus answered, Verily, verily, I say unto thee, Except a man be born of water and of the Spirit, he cannot enter into the kingdom of God."}]},
+      { ref:"João 3:16–17", topic:"Amor de Deus",
+        verses:[{
+          pt:"Porque Deus amou o mundo de tal maneira que deu o Seu Filho Unigénito, para que todo o que nele crê não pereça, mas tenha a vida eterna.",
+          en:"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."},
+          {pt:"Porque Deus enviou o Seu Filho ao mundo, não para que condenasse o mundo, mas para que o mundo fosse salvo por Ele.",
+          en:"For God sent not his Son into the world to condemn the world; but that the world through him might be saved."}]},
+      { ref:"João 7:17", topic:"Conhecer a Doutrina",
+        verses:[{
+          pt:"Se alguém quiser fazer a vontade do Pai, este saberá quanto à doutrina se ela é de Deus, ou se falo por Mim mesmo.",
+          en:"If any man will do his will, he shall know of the doctrine, whether it be of God, or whether I speak of myself."}]},
+      { ref:"João 14:6", topic:"O Caminho, a Verdade e a Vida",
+        verses:[{
+          pt:"Disse-lhe Jesus: Eu sou o caminho, e a verdade, e a vida; ninguém vem ao Pai, senão por Mim.",
+          en:"Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me."}]},
+      { ref:"João 14:26–27", topic:"O Dom do Espírito Santo",
+        verses:[{
+          pt:"Mas o Consolador, o Espírito Santo, a quem o Pai enviará em Meu nome, esse vos ensinará todas as coisas e vos recordará tudo quanto vos tenho dito.",
+          en:"But the Comforter, which is the Holy Ghost, whom the Father will send in my name, he shall teach you all things, and bring all things to your remembrance, whatsoever I have said unto you."},
+          {pt:"Deixo-vos a paz; a Minha paz vos dou; não vo-la dou como o mundo a dá. Não se turbe o vosso coração, nem se atemorize.",
+          en:"Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid."}]},
+      { ref:"Atos 3:19–21", topic:"A Restauração",
+        verses:[{
+          pt:"Arrependei-vos e convertei-vos, para que os vossos pecados sejam apagados, e venham os tempos de refrigério da presença do Senhor.",
+          en:"Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of the Lord;"},
+          {pt:"E Ele envie Jesus Cristo, que vos foi antes anunciado; a quem o céu deve receber até aos tempos da restauração de todas as coisas.",
+          en:"And he shall send Jesus Christ, which before was preached unto you: Whom the heaven must receive until the times of restitution of all things, which God hath spoken by the mouth of all his holy prophets since the world began."}]},
+      { ref:"Atos 8:14–17", topic:"O Dom do Espírito Santo pelas Mãos",
+        verses:[{
+          pt:"E quando os apóstolos que estavam em Jerusalém ouviram que a Samaria tinha recebido a palavra de Deus, enviaram a eles Pedro e João,",
+          en:"Now when the apostles which were at Jerusalem heard that Samaria had received the word of God, they sent unto them Peter and John:"},
+          {pt:"os quais, descendo, oraram por eles, para que recebessem o Espírito Santo. Então lhes impuseram as mãos, e eles receberam o Espírito Santo.",
+          en:"Who, when they were come down, prayed for them, that they might receive the Holy Ghost: Then laid they their hands on them, and they received the Holy Ghost."}]},
+      { ref:"Romanos 8:16–17", topic:"Filhos de Deus",
+        verses:[{
+          pt:"O próprio Espírito testifica com o nosso espírito que somos filhos de Deus.",
+          en:"The Spirit itself beareth witness with our spirit, that we are the children of God:"},
+          {pt:"E, se somos filhos, somos também herdeiros; herdeiros de Deus e co-herdeiros de Cristo; se é que com Ele padecemos, para que também com Ele sejamos glorificados.",
+          en:"And if children, then heirs; heirs of God, and joint-heirs with Christ; if so be that we suffer with him, that we may be also glorified together."}]},
+      { ref:"Efésios 2:19–20", topic:"O Fundamento dos Apóstolos",
+        verses:[{
+          pt:"Assim, pois, já não sois estranhos e forasteiros, mas concidadãos dos santos e membros da família de Deus,",
+          en:"Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of God;"},
+          {pt:"edificados sobre o fundamento dos apóstolos e dos profetas, sendo o próprio Jesus Cristo a pedra angular.",
+          en:"And are built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone."}]},
+      { ref:"Efésios 4:11–14", topic:"Apóstolos e Profetas na Igreja",
+        verses:[{
+          pt:"E Ele mesmo deu uns para apóstolos, e outros para profetas, e outros para evangelistas, e outros para pastores e doutores,",
+          en:"And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers;"},
+          {pt:"para o aperfeiçoamento dos santos, para a obra do ministério, para a edificação do corpo de Cristo,",
+          en:"For the perfecting of the saints, for the work of the ministry, for the edifying of the body of Christ:"},
+          {pt:"até que todos cheguemos à unidade da fé e do conhecimento do Filho de Deus, a homem perfeito, à medida da estatura da plenitude de Cristo.",
+          en:"Till we all come in the unity of the faith, and of the knowledge of the Son of God, unto a perfect man, unto the measure of the stature of the fulness of Christ."}]},
+      { ref:"Tiago 1:5", topic:"Se Carecer de Sabedoria",
+        verses:[{
+          pt:"Se algum de vós tem falta de sabedoria, peça-a a Deus, que a todos dá liberalmente e não censura; e ser-lhe-á dada.",
+          en:"If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him."}]},
+      { ref:"Tiago 2:17", topic:"Fé e Obras",
+        verses:[{
+          pt:"Assim também a fé, se não tiver as obras, é morta em si mesma.",
+          en:"Even so faith, if it hath not works, is dead, being alone."}]},
+      { ref:"Hebreus 5:4", topic:"Chamado por Deus",
+        verses:[{
+          pt:"Ninguém toma para si esta honra, senão aquele que é chamado por Deus, como também o foi Aarão.",
+          en:"And no man taketh this honour unto himself, but he that is called of God, as was Aaron."}]},
+    ]
+  },
+
+  // ── DOUTRINA E CONVÉNIOS ──────────────────────────────────────────────────
   { id:"dc", label:"Doutrina e Convénios", sublabel:"Doctrine & Covenants", icon:"📙", color:"#B8511A",
     chapters:[
-      { ref:"D&C 4:2", topic:"O Chamado Missionário",
-        verses:[
-          {pt:"Portanto, ó vós que embarcais no serviço de Deus, vede que o servis com todo o vosso coração, poder, mente e força, a fim de que possais ser encontrados imaculados perante Deus no último dia.",
-           en:"Therefore, O ye that embark in the service of God, see that ye serve him with all your heart, might, mind and strength, that ye may stand blameless before God at the last day."}
-        ]
-      },
-      { ref:"D&C 18:10", topic:"O Valor das Almas",
-        verses:[
-          {pt:"Lembrai-vos de que o valor das almas é grande aos olhos de Deus;",
-           en:"Remember the worth of souls is great in the sight of God;"}
-        ]
-      },
+      { ref:"D&C 1:30", topic:"A Igreja Verdadeira e Viva",
+        verses:[{
+          pt:"E também a única Igreja verdadeira e viva sobre toda a face da terra, com a qual Eu, o Senhor, estou bem satisfeito.",
+          en:"And also the only true and living church upon the face of the whole earth, with which I, the Lord, am well pleased, speaking unto the church collectively and not individually."}]},
+      { ref:"D&C 4:2–4", topic:"O Chamado Missionário",
+        verses:[{
+          pt:"Portanto, ó vós que embarcais no serviço de Deus, vede que o servis com todo o vosso coração, poder, mente e força, a fim de que possais ser encontrados imaculados perante Deus no último dia.",
+          en:"Therefore, O ye that embark in the service of God, see that ye serve him with all your heart, might, mind and strength, that ye may stand blameless before God at the last day."},
+          {pt:"Por isso, se tiverdes o desejo de servir a Deus, sois chamados à obra;",
+          en:"Therefore, if ye have desires to serve God ye are called to the work;"},
+          {pt:"pois eis que o campo já está branco para a ceifa; portanto, todo aquele que deseje colher, colha com a sua foice enquanto é dia, para que armazene os seus frutos para a vida eterna.",
+          en:"For behold the field is white already to harvest; and lo, he that thrusteth in his sickle with his might, the same layeth up in store that he perisheth not, but bringeth salvation to his soul."}]},
+      { ref:"D&C 6:36", topic:"Olha para Mim",
+        verses:[{
+          pt:"Olha para Mim em todos os pensamentos; não duvides, não temas.",
+          en:"Look unto me in every thought; doubt not, fear not."}]},
+      { ref:"D&C 8:2–3", topic:"Revelação pela Mente e Coração",
+        verses:[{
+          pt:"Sim, eis que vou dizer-te na tua mente e no teu coração pelo Espírito Santo, que virá sobre ti e habitará no teu coração.",
+          en:"Yea, behold, I will tell you in your mind and in your heart, by the Holy Ghost, which shall come upon you and which shall dwell in your heart."},
+          {pt:"Agora, eis que isso é o espírito de revelação; eis que tua é a missão de Elias que deves realizar para preparar o caminho para os grandes trabalhos que virão a seguir.",
+          en:"Now, behold, this is the spirit of revelation; behold, this is the spirit by which Moses brought the children of Israel through the Red Sea on dry ground."}]},
+      { ref:"D&C 9:7–9", topic:"Estudo no Teu Espírito",
+        verses:[{
+          pt:"Eis que não te ensinei que deves estudar isso em tua mente? Então, não dizei que me confiastes que vos instruísse antes do tempo; agora eis que digo-te que deves confiar em Mim nessas coisas.",
+          en:"Behold, you have not understood; you have supposed that I would give it unto you, when you took no thought save it was to ask me."},
+          {pt:"Mas eis que digo-te que deves estudar nas tuas mentes; então me perguntar se está correto e se for correto, farei que o teu seio queime dentro de ti.",
+          en:"But, behold, I say unto you, that you must study it out in your mind; then you must ask me if it be right, and if it is right I will cause that your bosom shall burn within you; therefore, you shall feel that it is right."},
+          {pt:"Mas se não for correto, não terás tais sentimentos, mas terás um estupor de pensamento.",
+          en:"But if it be not right you shall have no such feelings, but you shall have a stupor of thought that shall cause you to forget the thing which is wrong."}]},
+      { ref:"D&C 11:21", topic:"Obtém a Minha Palavra",
+        verses:[{
+          pt:"Não procures declarar a Minha palavra, mas primeiramente busca obter a Minha palavra, e então terás a tua língua desatada; e então, se quiseres, terás o Meu Espírito e a Minha palavra.",
+          en:"Seek not to declare my word, but first seek to obtain my word, and then shall your tongue be loosed; then, if you desire, you shall have my Spirit and my word, yea, the power of God unto the convincing of men."}]},
+      { ref:"D&C 14:7", topic:"Vida Eterna — O Dom Mais Excelente",
+        verses:[{
+          pt:"E se guardares os Meus mandamentos e perseverares até ao fim, terás a vida eterna, que é o dom mais excelente de Deus.",
+          en:"And, if you keep my commandments and endure to the end you shall have eternal life, which gift is the greatest of all the gifts of God."}]},
+      { ref:"D&C 18:10–11", topic:"O Valor das Almas",
+        verses:[{
+          pt:"Lembrai-vos de que o valor das almas é grande aos olhos de Deus;",
+          en:"Remember the worth of souls is great in the sight of God;"},
+          {pt:"Pois eis que o Senhor vosso Redentor sofreu a morte na carne; portanto Ele sofreu as dores de todos os homens, para que todos os homens pudessem arrepender-se e virem a Ele.",
+          en:"For, behold, the Lord your Redeemer suffered death in the flesh; wherefore he suffered the pain of all men, that all men might repent and come unto him."}]},
+      { ref:"D&C 20:37", topic:"Condições para o Batismo",
+        verses:[{
+          pt:"E novamente, por via de mandamento à Igreja, concernente ao modo de batismo — todos aqueles que se humilharem verdadeiramente perante Deus e desejarem ser batizados, e vierem com corações quebrantados e espíritos contristados, e testemunharem perante a Igreja que verdadeiramente se arrependeram de todos os seus pecados.",
+          en:"And again, by way of commandment to the church concerning the manner of baptism — All those who humble themselves before God, and desire to be baptized, and come forth with broken hearts and contrite spirits, and witness before the church that they have truly repented of all their sins."}]},
+      { ref:"D&C 50:13–14", topic:"Por que Fui Enviado",
+        verses:[{
+          pt:"Por isso, Eu, o Senhor, vos pergunto: Que pregam aqueles que foram enviados em Meu nome? Certamente, verdadeiramente, essa é a minha doutrina: aquele que é ordenado por Mim e enviado em Meu nome para pregar o evangelho da forma humilde.",
+          en:"Wherefore, I the Lord ask you this question — unto what were ye ordained? To preach my gospel by the Spirit, even the Comforter which was sent forth to teach the truth."}]},
       { ref:"D&C 58:26–27", topic:"Ação e Iniciativa",
-        verses:[
-          {pt:"Pois eis que não é conveniente que eu ordene em tudo, pois aquele que é compelido em tudo é um servo preguiçoso e não sábio;",
-           en:"For behold, it is not meet that I should command in all things; for he that is compelled in all things, the same is a slothful and not a wise servant;"},
-          {pt:"portanto, eles recebem mérito somente quando fazem o que é justo. Mas aquele que age e não é agido é abençoado por Mim.",
-           en:"Verily I say, men should be anxiously engaged in a good cause, and do many things of their own free will, and bring to pass much righteousness;"},
-        ]
-      },
+        verses:[{
+          pt:"Pois eis que não é conveniente que Eu ordene em tudo, pois aquele que é compelido em tudo é um servo preguiçoso e não sábio.",
+          en:"For behold, it is not meet that I should command in all things; for he that is compelled in all things, the same is a slothful and not a wise servant."},
+          {pt:"Por isso, os homens devem empenhar-se ativamente numa boa causa e fazer muitas coisas de sua própria livre vontade e levar a cabo muita justiça.",
+          en:"Verily I say, men should be anxiously engaged in a good cause, and do many things of their own free will, and bring to pass much righteousness."}]},
+      { ref:"D&C 76:22–24", topic:"Testemunho de Jesus Cristo",
+        verses:[{
+          pt:"E agora, depois de muitas testemunhas que foram dadas acerca Dele, eis que esta é a testemunha, a última de todas, que damos d'Ele: Que Ele vive!",
+          en:"And now, after the many testimonies which have been given of him, this is the testimony, last of all, which we give of him: That he lives!"},
+          {pt:"Pois nós O vimos, até mesmo à direita de Deus; e ouvimos a voz testemunhando que Ele é o Unigénito do Pai.",
+          en:"For we saw him, even on the right hand of God; and we heard the voice bearing record that he is the Only Begotten of the Father."},
+          {pt:"Que por Ele, e por meio d'Ele, e D'Ele, os mundos foram criados e os seus habitantes são filhos nascidos de Deus.",
+          en:"That by him, and through him, and of him, the worlds are and were created, and the inhabitants thereof are begotten sons and daughters unto God."}]},
+      { ref:"D&C 84:33–35", topic:"Juramentos e Convénios do Sacerdócio",
+        verses:[{
+          pt:"Porque aquele que recebe as minhas ordenanças, afirma que pertence ao Meu sacerdócio, e recebe o sacerdócio de acordo com esse juramento e convénio de Meu Pai.",
+          en:"For whoso is faithful unto the obtaining these two priesthoods of which I have spoken, and the magnifying their calling, are sanctified by the Spirit unto the renewing of their bodies."},
+          {pt:"Todos os que recebem esse sacerdócio recebem-Me, diz o Senhor.",
+          en:"They become the sons of Moses and of Aaron and the seed of Abraham, and the church and kingdom, and the elect of God. And also all they who receive this priesthood receive me, saith the Lord."}]},
+      { ref:"D&C 88:63", topic:"Aproxima-te de Deus",
+        verses:[{
+          pt:"Aproxima-te de Mim e Eu me aproximarei de ti; buscai-Me diligentemente e haveis de encontrar-Me; pedi e recebereis; batei e abrir-se-vos-á.",
+          en:"Draw near unto me and I will draw near unto you; seek me diligently and ye shall find me; ask, and ye shall receive; knock, and it shall be opened unto you."}]},
+      { ref:"D&C 121:7–8", topic:"Paz na Adversidade",
+        verses:[{
+          pt:"Meu filho, paz seja para a tua alma; a tua adversidade e as tuas aflições não durarão mais que um pequeno momento;",
+          en:"My son, peace be unto thy soul; thine adversity and thine afflictions shall be but a small moment;"},
+          {pt:"E então, se suportares isso bem, Deus te exaltará nas alturas; triunfarás sobre todos os teus inimigos.",
+          en:"And then, if thou endure it well, God shall exalt thee on high; thou shalt triumph over all thy foes."}]},
+      { ref:"D&C 130:22–23", topic:"A Natureza de Deus",
+        verses:[{
+          pt:"O Pai tem um corpo de partes e paixões tão tangível quanto o do homem; o Filho também; mas o Espírito Santo não tem um corpo de carne e ossos, mas é um personagem de Espírito.",
+          en:"The Father has a body of flesh and bones as tangible as man's; the Son also; but the Holy Ghost has not a body of flesh and bones, but is a personage of Spirit. Were it not so, the Holy Ghost could not dwell in us."},
+          {pt:"Um homem pode receber o Espírito Santo e pode recebê-lo apenas temporariamente e o dom do Espírito Santo pode ser conferido.",
+          en:"A man may receive the Holy Ghost, and it may descend upon him and not tarry with him."}]},
+      { ref:"D&C 131:1–4", topic:"O Casamento Eterno",
+        verses:[{
+          pt:"No grau celestial há três céus ou graus; e para obter o mais elevado, um homem deve entrar nesta ordem do sacerdócio, o que significa o novo e eterno convénio do casamento;",
+          en:"In the celestial glory there are three heavens or degrees; And in order to obtain the highest, a man must enter into this order of the priesthood meaning the new and everlasting covenant of marriage;"},
+          {pt:"E se não fizer isso, não pode obtê-lo.",
+          en:"And if he does not, he cannot obtain it. He may enter into the other, but that is the end of his kingdom; he cannot have an increase."}]},
+    ]
+  },
+
+  // ── PÉROLA DE GRANDE VALOR ────────────────────────────────────────────────
+  { id:"pgp", label:"Pérola de Grande Valor", sublabel:"Pearl of Great Price", icon:"✨", color:"#A87820",
+    chapters:[
+      { ref:"Moisés 1:39", topic:"A Obra e a Glória de Deus",
+        verses:[{
+          pt:"Pois eis que esta é a Minha obra e a Minha glória — levar a cabo a imortalidade e a vida eterna do homem.",
+          en:"For behold, this is my work and my glory — to bring to pass the immortality and eternal life of man."}]},
+      { ref:"Moisés 7:18", topic:"Sião — Unidade de Coração",
+        verses:[{
+          pt:"E o Senhor chamou o Seu povo SIÃO, porque eram de um só coração e de um só pensamento e viviam em justiça; e não havia pobres entre eles.",
+          en:"And the Lord called his people Zion, because they were of one heart and one mind, and dwelt in righteousness; and there was no poor among them."}]},
+      { ref:"Abraão 3:22–23", topic:"Almas Nobres e Grandes",
+        verses:[{
+          pt:"E o Senhor deu-me a ver inteligências que foram organizadas antes de o mundo ser; e entre todas essas havia muitas das nobres e grandes.",
+          en:"Now the Lord had shown unto me, Abraham, the intelligences that were organized before the world was; and among all these there were many of the noble and great ones;"},
+          {pt:"E Deus viu essas almas que eram boas e disse: Farei destes os Meus governantes; pois Ele estava entre eles e disse: Eu sou o Senhor teu Deus; escolhi-te antes de tu nasceres.",
+          en:"And God saw these souls that they were good, and he stood in the midst of them, and he said: These I will make my rulers; for he stood among those that were spirits, and he saw that they were good; and he said unto me: Abraham, thou art one of them; thou wast chosen before thou wast born."}]},
+      { ref:"José Smith — História 1:15–17", topic:"A Primeira Visão",
+        verses:[{
+          pt:"Encontrava-me num belo dia sereno, no início da primavera de mil oitocentos e vinte. Era um dia belo e sereno. Assim que Vi as personagens, o espírito que havia possuído uma estranha influência sobre minha mente desapareceu.",
+          en:"It was on the morning of a beautiful, clear day, early in the spring of eighteen hundred and twenty. I saw a pillar of light exactly over my head, above the brightness of the sun, which descended gradually until it fell upon me."},
+          {pt:"Quando a luz pousou sobre mim, eu vi dois Personagens cuja claridade e glória desafiam toda a descrição, de pé acima de mim no ar. Um deles falou comigo, chamando-me pelo nome, e disse, apontando para o outro: Este é o Meu Filho Amado. Escuta-O!",
+          en:"When the light rested upon me I saw two Personages, whose brightness and glory defy all description, standing above me in the air. One of them spake unto me, calling me by name and said, pointing to the other — This is My Beloved Son. Hear Him!"}]},
+      { ref:"José Smith — História 1:19", topic:"Apostasia e Restauração",
+        verses:[{
+          pt:"Respondeu-me que eu não devia unir-me a nenhuma delas, porque todas estavam erradas; e o Personagem que me falou disse que todas as suas credos eram uma abominação aos Seus olhos.",
+          en:"I was answered that I must join none of them, for they were all wrong; and the Personage who addressed me said that all their creeds were an abomination in his sight; that those professors were all corrupt."}]},
+      { ref:"Artigos de Fé 1:1–4", topic:"Os Artigos de Fé — Princípios Fundamentais",
+        verses:[{
+          pt:"Cremos em Deus, o Eterno Pai, e em Seu Filho, Jesus Cristo, e no Espírito Santo.",
+          en:"We believe in God, the Eternal Father, and in His Son, Jesus Christ, and in the Holy Ghost."},
+          {pt:"Cremos que os homens serão punidos pelos seus próprios pecados, e não pela transgressão de Adão.",
+          en:"We believe that men will be punished for their own sins, and not for Adam's transgression."},
+          {pt:"Cremos que, por meio da Expiação de Cristo, toda a humanidade pode ser salva, mediante a obediência às leis e às ordenanças do Evangelho.",
+          en:"We believe that through the Atonement of Christ, all mankind may be saved, by obedience to the laws and ordinances of the Gospel."},
+          {pt:"Cremos que os primeiros princípios e ordenanças do Evangelho são: primeiro, Fé no Senhor Jesus Cristo; segundo, Arrependimento; terceiro, Batismo por imersão para a remissão dos pecados; quarto, Imposição de mãos para o dom do Espírito Santo.",
+          en:"We believe that the first principles and ordinances of the Gospel are: first, Faith in the Lord Jesus Christ; second, Repentance; third, Baptism by immersion for the remission of sins; fourth, Laying on of hands for the gift of the Holy Ghost."}]},
+      { ref:"Artigos de Fé 1:6–7", topic:"Os Artigos de Fé — Organização da Igreja",
+        verses:[{
+          pt:"Cremos na mesma organização que existiu na Igreja Primitiva, ou seja: apóstolos, profetas, pastores, mestres, evangelistas e assim por diante.",
+          en:"We believe in the same organization that existed in the Primitive Church, namely, apostles, prophets, pastors, teachers, evangelists, and so forth."},
+          {pt:"Cremos no dom das línguas, da profecia, da revelação, das visões, da cura, da interpretação de línguas e assim por diante.",
+          en:"We believe in the gift of tongues, prophecy, revelation, visions, healing, interpretation of tongues, and so forth."}]},
+      { ref:"Artigos de Fé 1:13", topic:"Os Artigos de Fé — Virtude e Esperança",
+        verses:[{
+          pt:"Cremos em ser honestos, verdadeiros, castos, benevolentes, virtuosos e em fazer o bem a todos os homens. De fato, podemos dizer que seguimos a admoestação de Paulo: Cremos todas as coisas, esperamos todas as coisas, suportamos muitas coisas e esperamos poder suportar todas as coisas. Se existe qualquer coisa virtuosa, bela, amável ou de boa reputação, buscamos essas coisas.",
+          en:"We believe in being honest, true, chaste, benevolent, virtuous, and in doing good to all men; indeed, we may say that we follow the admonition of Paul — We believe all things, we hope all things, we have endured many things, and hope to be able to endure all things. If there is anything virtuous, lovely, or of good report or praiseworthy, we seek after these things."}]},
     ]
   },
 ];
@@ -1698,10 +2023,10 @@ function ScriptureView({scriptureData,saveScriptureData}){
       </div>
 
       {/* Book selector */}
-      <div style={{display:"flex",gap:"6px",marginBottom:"16px"}}>
+      <div style={{display:"flex",gap:"5px",flexWrap:"wrap",marginBottom:"16px"}}>
         {SCRIPTURE_BOOKS.map(b=>(
           <button key={b.id} onClick={()=>{setBook(b.id);setActiveRef(null);}}
-            style={{flex:1,padding:"10px 8px",borderRadius:"11px",fontSize:"12px",cursor:"pointer",
+            style={{flex:"1 1 auto",minWidth:"80px",padding:"9px 7px",borderRadius:"11px",fontSize:"11px",cursor:"pointer",
                     border:book===b.id?"none":`0.5px solid ${C.border}`,
                     background:book===b.id?b.color:"transparent",
                     color:book===b.id?C.onDark:C.muted,fontWeight:book===b.id?"500":"400",
