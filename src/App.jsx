@@ -2590,9 +2590,9 @@ export default function App(){
         <div style={{position:"relative",zIndex:3,padding:"16px 14px 0",maxWidth:"720px",margin:"0 auto"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:"3px"}}>
             <div>
-              <div style={{fontSize:"10px",letterSpacing:"0.2em",color:"rgba(248,242,228,0.65)",textTransform:"uppercase",marginBottom:"2px"}}>🇵🇹 Portugal Porto Mission</div>
-              <h1 style={{fontFamily:"Georgia,serif",fontSize:"20px",fontWeight:"400",color:C.onDark,marginBottom:"1px",textShadow:"0 1px 3px rgba(0,0,0,0.3)"}}>Irmã Bennett</h1>
-              <div style={{fontSize:"10px",color:"rgba(248,242,228,0.45)",marginBottom:"12px"}}>Português Europeu · All Phases Complete</div>
+              <div style={{fontSize:"10px",letterSpacing:"0.25em",color:"rgba(248,242,228,0.75)",textTransform:"uppercase",marginBottom:"4px"}}>🇵🇹 Portugal Porto Mission</div>
+              <h1 style={{fontFamily:"Georgia,serif",fontSize:"30px",fontWeight:"700",color:"#FFFFFF",margin:"0 0 2px 0",textShadow:"0 2px 8px rgba(0,0,0,0.45)",letterSpacing:"0.01em",lineHeight:1.1}}>Sister Bennett</h1>
+              <div style={{fontFamily:"Georgia,serif",fontSize:"14px",fontWeight:"400",color:"rgba(248,242,228,0.80)",marginBottom:"12px",letterSpacing:"0.03em",fontStyle:"italic"}}>Irmã Bennett · Português Europeu</div>
             </div>
             <div style={{display:"flex",flexDirection:"column",gap:"5px",alignItems:"flex-end"}}>
               <StreakBadge streak={streak}/>
