@@ -413,7 +413,45 @@ function calcReadiness(alphaData, phraseData, vocabData, cultureData, readerData
 // ══════════════════════════════════════════════════════════════════════════════
 //  SHARED HELPERS & HOOKS
 // ══════════════════════════════════════════════════════════════════════════════
-function speakPT(text,rate=0.82) {
+// ── AZURE TTS ─────────────────────────────────────────────────────────────────
+// Reads Azure credentials from localStorage (sb-azure-key, sb-azure-region).
+// Falls back to browser Web Speech API if no Azure key is set.
+const _audioCache = {};
+async function speakPT(text, rate=0.82) {
+  const azureKey    = (() => { try { return JSON.parse(localStorage.getItem("sb-azure-key"))||""; } catch { return ""; } })();
+  const azureRegion = (() => { try { return JSON.parse(localStorage.getItem("sb-azure-region"))||"eastus"; } catch { return "eastus"; } })();
+
+  if (azureKey) {
+    // ── Azure Neural TTS (FernandaNeural) ──────────────────────────────────
+    const cacheKey = text.slice(0,80);
+    if (_audioCache[cacheKey]) { _audioCache[cacheKey].pause(); _audioCache[cacheKey].currentTime=0; _audioCache[cacheKey].play(); return; }
+    try {
+      const ssml = `<speak version='1.0' xml:lang='pt-PT'><voice name='pt-PT-FernandaNeural'><prosody rate='${rate<0.9?"-15%":"0%"}'>${text.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</prosody></voice></speak>`;
+      const res = await fetch(`https://${azureRegion}.tts.speech.microsoft.com/cognitiveservices/v1`, {
+        method:"POST",
+        headers:{
+          "Ocp-Apim-Subscription-Key": azureKey,
+          "Content-Type": "application/ssml+xml",
+          "X-Microsoft-OutputFormat": "audio-16khz-128kbitrate-mono-mp3",
+          "User-Agent": "SisterBennettApp"
+        },
+        body: ssml
+      });
+      if (!res.ok) throw new Error(`Azure TTS error ${res.status}`);
+      const blob = await res.blob();
+      const url  = URL.createObjectURL(blob);
+      const audio = new Audio(url);
+      _audioCache[cacheKey] = audio;
+      audio.play();
+    } catch(e) {
+      console.warn("Azure TTS failed, falling back to browser voice:", e.message);
+      _browserSpeak(text, rate);
+    }
+  } else {
+    _browserSpeak(text, rate);
+  }
+}
+function _browserSpeak(text, rate=0.82) {
   if (!("speechSynthesis" in window)) return;
   window.speechSynthesis.cancel();
   const u=new SpeechSynthesisUtterance(text); u.lang="pt-PT"; u.rate=rate;
@@ -2504,6 +2542,142 @@ function Certificate({score,streak}){
 //  ROOT APP — All 10 tabs, Phases 1–4 Complete
 // ══════════════════════════════════════════════════════════════════════════════
 
+// ── AZURE SETTINGS PANEL ─────────────────────────────────────────────────────
+function AzureSettingsPanel({onClose}){
+  const [key,setKey]       = useLS("sb-azure-key","");
+  const [region,setRegion] = useLS("sb-azure-region","eastus");
+  const [testState,setTestState] = useState("idle"); // idle|testing|ok|fail
+  const [localKey,setLocalKey]   = useState(key||"");
+  const [localRegion,setLocalRegion] = useState(region||"eastus");
+
+  const REGIONS = ["eastus","eastus2","westus","westus2","westeurope","northeurope",
+                   "australiaeast","canadacentral","centralindia","japaneast","uksouth"];
+
+  const handleSave = () => { setKey(localKey.trim()); setRegion(localRegion); onClose(); };
+  const handleClear= () => { setKey(""); setLocalKey(""); setTestState("idle"); };
+
+  const handleTest = async () => {
+    if (!localKey.trim()) return;
+    setTestState("testing");
+    try {
+      const ssml = `<speak version='1.0' xml:lang='pt-PT'><voice name='pt-PT-FernandaNeural'>Olá, Irmã Bennett!</voice></speak>`;
+      const res = await fetch(`https://${localRegion}.tts.speech.microsoft.com/cognitiveservices/v1`,{
+        method:"POST",
+        headers:{
+          "Ocp-Apim-Subscription-Key":localKey.trim(),
+          "Content-Type":"application/ssml+xml",
+          "X-Microsoft-OutputFormat":"audio-16khz-128kbitrate-mono-mp3",
+          "User-Agent":"SisterBennettApp"
+        },
+        body:ssml
+      });
+      if (!res.ok) throw new Error(res.status);
+      const blob = await res.blob();
+      new Audio(URL.createObjectURL(blob)).play();
+      setTestState("ok");
+    } catch(e) {
+      setTestState("fail");
+    }
+  };
+
+  return(
+    <div style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.5)",zIndex:1000,
+                 display:"flex",alignItems:"center",justifyContent:"center",padding:"16px"}}>
+      <div style={{background:C.bg,borderRadius:"20px",padding:"24px",width:"100%",
+                   maxWidth:"420px",boxShadow:"0 8px 32px rgba(0,0,0,0.25)"}}>
+        {/* Header */}
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"18px"}}>
+          <div>
+            <div style={{fontFamily:"Georgia,serif",fontSize:"18px",color:C.ink}}>
+              🔊 Azure Voice Settings
+            </div>
+            <div style={{fontSize:"12px",color:C.muted,marginTop:"2px"}}>
+              pt-PT-FernandaNeural — European Portuguese
+            </div>
+          </div>
+          <button onClick={onClose} style={{background:"transparent",border:"none",
+                                            fontSize:"20px",cursor:"pointer",color:C.faint}}>✕</button>
+        </div>
+
+        {/* Status */}
+        {key ? (
+          <div style={{background:C.softGreen,border:`0.5px solid ${C.green}`,borderRadius:"10px",
+                       padding:"10px 14px",marginBottom:"16px",fontSize:"13px",
+                       color:C.green,display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+            <span>✅ Azure voice active — Fernanda Neural</span>
+            <button onClick={handleClear}
+              style={{background:"transparent",border:`0.5px solid ${C.green}`,borderRadius:"7px",
+                      padding:"3px 9px",fontSize:"11px",color:C.green,cursor:"pointer"}}>
+              Remove
+            </button>
+          </div>
+        ):(
+          <div style={{background:C.softGold,border:`0.5px solid ${C.border}`,borderRadius:"10px",
+                       padding:"10px 14px",marginBottom:"16px",fontSize:"12px",color:C.ochre,lineHeight:1.6}}>
+            No Azure key set — using browser voice. Enter your key below for the natural-sounding Fernanda Neural voice.
+          </div>
+        )}
+
+        {/* Key input */}
+        <div style={{marginBottom:"12px"}}>
+          <div style={{fontSize:"12px",fontWeight:"500",color:C.muted,marginBottom:"5px"}}>
+            Azure Speech API Key
+          </div>
+          <input type="password" value={localKey} onChange={e=>setLocalKey(e.target.value)}
+            placeholder="Paste your Azure KEY 1 here..."
+            style={{width:"100%",padding:"10px 12px",background:C.surface,
+                    border:`0.5px solid ${C.border}`,borderRadius:"9px",
+                    fontSize:"13px",color:C.ink,fontFamily:"monospace",boxSizing:"border-box"}}/>
+          <div style={{fontSize:"11px",color:C.faint,marginTop:"4px"}}>
+            Found at: Azure Portal → Your Speech resource → Keys and Endpoint → KEY 1
+          </div>
+        </div>
+
+        {/* Region selector */}
+        <div style={{marginBottom:"18px"}}>
+          <div style={{fontSize:"12px",fontWeight:"500",color:C.muted,marginBottom:"5px"}}>
+            Azure Region
+          </div>
+          <select value={localRegion} onChange={e=>setLocalRegion(e.target.value)}
+            style={{width:"100%",padding:"9px 12px",background:C.surface,
+                    border:`0.5px solid ${C.border}`,borderRadius:"9px",
+                    fontSize:"13px",color:C.ink,boxSizing:"border-box"}}>
+            {REGIONS.map(r=><option key={r} value={r}>{r}</option>)}
+          </select>
+          <div style={{fontSize:"11px",color:C.faint,marginTop:"4px"}}>
+            Must match the region you selected when creating the Speech resource
+          </div>
+        </div>
+
+        {/* Test result */}
+        {testState==="ok"   && <div style={{fontSize:"13px",color:C.green,  marginBottom:"12px",textAlign:"center"}}>🎉 Voice test worked — you should have heard Fernanda say "Olá, Irmã Bennett!"</div>}
+        {testState==="fail" && <div style={{fontSize:"13px",color:C.red,    marginBottom:"12px",textAlign:"center"}}>❌ Test failed — check your key and region are correct</div>}
+        {testState==="testing"&&<div style={{fontSize:"13px",color:C.muted, marginBottom:"12px",textAlign:"center"}}>🔊 Testing voice...</div>}
+
+        {/* Action buttons */}
+        <div style={{display:"flex",gap:"8px"}}>
+          <button onClick={handleTest} disabled={!localKey.trim()||testState==="testing"}
+            style={{flex:1,padding:"10px",borderRadius:"10px",fontSize:"13px",cursor:"pointer",
+                    border:`0.5px solid ${C.border}`,background:C.surface,color:C.muted}}>
+            🔊 Test voice
+          </button>
+          <button onClick={handleSave} disabled={!localKey.trim()}
+            style={{flex:2,padding:"10px",borderRadius:"10px",fontSize:"13px",cursor:"pointer",
+                    border:"none",background:localKey.trim()?C.green:C.border,
+                    color:C.onDark,fontWeight:"500"}}>
+            Save & activate
+          </button>
+        </div>
+
+        <div style={{marginTop:"14px",padding:"10px 12px",background:C.surface,
+                     borderRadius:"9px",fontSize:"11px",color:C.faint,lineHeight:1.7}}>
+          🔒 Your key is stored only on this device in localStorage. It is never sent anywhere except directly to Microsoft Azure to generate audio.
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // API key management — stored in localStorage, used by AI Conversation tab
 function useApiKey() {
   const [apiKey,setApiKeyState]=useLS("sb-api-key","");
@@ -2568,6 +2742,8 @@ export default function App(){
   const [convData,saveConvData]          =useLS("sb-conv",      {sessions:0,totalMessages:0});
   const [apiKey,saveApiKey]              =useApiKey();
   const [showCert,setShowCert]           =useState(false);
+  const [showAzure,setShowAzure]         =useState(false);
+  const [azureKey]                       =useLS("sb-azure-key","");
 
   useEffect(()=>{
     if("speechSynthesis" in window){
@@ -2590,18 +2766,27 @@ export default function App(){
         <div style={{position:"relative",zIndex:3,padding:"16px 14px 0",maxWidth:"720px",margin:"0 auto"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:"3px"}}>
             <div>
-              <div style={{fontSize:"10px",letterSpacing:"0.25em",color:"rgba(248,242,228,0.75)",textTransform:"uppercase",marginBottom:"4px"}}>🇵🇹 Portugal Porto Mission</div>
-              <h1 style={{fontFamily:"Georgia,serif",fontSize:"30px",fontWeight:"700",color:"#FFFFFF",margin:"0 0 2px 0",textShadow:"0 2px 8px rgba(0,0,0,0.45)",letterSpacing:"0.01em",lineHeight:1.1}}>Sister Bennett</h1>
-              <div style={{fontFamily:"Georgia,serif",fontSize:"14px",fontWeight:"400",color:"rgba(248,242,228,0.80)",marginBottom:"12px",letterSpacing:"0.03em",fontStyle:"italic"}}>Irmã Bennett · Português Europeu</div>
+              <div style={{fontSize:"10px",letterSpacing:"0.2em",color:"rgba(248,242,228,0.65)",textTransform:"uppercase",marginBottom:"2px"}}>🇵🇹 Portugal Porto Mission</div>
+              <h1 style={{fontFamily:"Georgia,serif",fontSize:"20px",fontWeight:"400",color:C.onDark,marginBottom:"1px",textShadow:"0 1px 3px rgba(0,0,0,0.3)"}}>Irmã Bennett</h1>
+              <div style={{fontSize:"10px",color:"rgba(248,242,228,0.45)",marginBottom:"12px"}}>Português Europeu · All Phases Complete</div>
             </div>
             <div style={{display:"flex",flexDirection:"column",gap:"5px",alignItems:"flex-end"}}>
               <StreakBadge streak={streak}/>
+              <button onClick={()=>setShowAzure(!showAzure)}
+                style={{background:azureKey?"rgba(4,106,56,0.25)":"rgba(255,255,255,0.12)",
+                        border:`0.5px solid ${azureKey?C.green:"rgba(255,255,255,0.25)"}`,
+                        borderRadius:"10px",padding:"4px 10px",fontSize:"11px",
+                        fontWeight:"500",cursor:"pointer",
+                        color:azureKey?C.green:"rgba(248,242,228,0.8)"}}>
+                {azureKey?"🔊 Fernanda Neural":"🔊 Set voice"}
+              </button>
               <button onClick={()=>setShowCert(!showCert)}
                 style={{background:missionReady?"rgba(4,106,56,0.25)":"rgba(200,165,39,0.18)",border:`0.5px solid ${missionReady?C.green:C.gold}`,borderRadius:"10px",padding:"4px 10px",fontSize:"11px",fontWeight:"500",cursor:"pointer",color:missionReady?C.green:C.gold}}>
                 {missionReady?"🏆 "+r.total+"% · Certificate":"🎯 "+r.total+"% ready"}
               </button>
             </div>
           </div>
+          {showAzure&&<AzureSettingsPanel onClose={()=>setShowAzure(false)}/>}
           {showCert&&missionReady&&<Certificate score={r.total} streak={streak}/>}
           {showCert&&missionReady&&(
             <div style={{padding:"8px 0",textAlign:"center"}}>
