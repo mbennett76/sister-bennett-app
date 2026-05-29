@@ -17,32 +17,32 @@ const C = {
 //  PHASE 1 DATA
 // ══════════════════════════════════════════════════════════════════════════════
 const ALPHABET_DATA = [
-  {letter:"A",name:"á",     ipa:"/a/ · /ɐ/",              example:"amor",        meaning:"love",        tip:"Open 'ah' when stressed; softer schwa /ɐ/ when unstressed"},
-  {letter:"B",name:"bê",    ipa:"/b/",                    example:"bem",         meaning:"well/good",   tip:"Same as English B"},
-  {letter:"C",name:"cê",    ipa:"/s/ or /k/",             example:"Cristo",      meaning:"Christ",      tip:'"S" before E/I; "K" before A/O/U'},
-  {letter:"D",name:"dê",    ipa:"/d/",                    example:"Deus",        meaning:"God",         tip:"Softer than English D — never the 'j' used in Brazilian Portuguese"},
-  {letter:"E",name:"ê",     ipa:"/e/ · /ɛ/ · /ɨ/",       example:"evangelho",   meaning:"gospel",      tip:"⚠️ Often nearly SILENT at word endings in pt-PT!"},
-  {letter:"F",name:"éfe",   ipa:"/f/",                    example:"fé",          meaning:"faith",       tip:"Exactly like English F"},
-  {letter:"G",name:"gê",    ipa:"/ɡ/ or /ʒ/",             example:"graça",       meaning:"grace",       tip:"Hard G before A/O/U; soft 'zh' before E/I"},
-  {letter:"H",name:"agá",   ipa:"(always silent)",        example:"hora",        meaning:"hour",        tip:"⚠️ H is ALWAYS silent — hora = 'OH-rah'"},
-  {letter:"I",name:"i",     ipa:"/i/",                    example:"Igreja",      meaning:"church",      tip:"Always a clear 'ee' — never changes"},
-  {letter:"J",name:"jota",  ipa:"/ʒ/",                    example:"Jesus",       meaning:"Jesus",       tip:"The 's' in 'measure' — 'Zheh-ZOOSH' in pt-PT"},
-  {letter:"K",name:"capa",  ipa:"/k/",                    example:"quilómetro",  meaning:"kilometre",   tip:"Rare — mostly in foreign words"},
-  {letter:"L",name:"ele",   ipa:"/l/",                    example:"luz",         meaning:"light",       tip:"Clear L at start; darker L at syllable end"},
-  {letter:"M",name:"eme",   ipa:"/m/ (nasalizes)",        example:"missão",      meaning:"mission",     tip:"At syllable end, M nasalizes the vowel before it"},
-  {letter:"N",name:"ene",   ipa:"/n/ (nasalizes)",        example:"nome",        meaning:"name",        tip:"Like M — nasalizes the preceding vowel"},
-  {letter:"O",name:"ó",     ipa:"/o/ · /ɔ/ · /u/",       example:"oração",      meaning:"prayer",      tip:"Unstressed O often sounds like 'oo' — unique to pt-PT!"},
-  {letter:"P",name:"pê",    ipa:"/p/",                    example:"paz",         meaning:"peace",       tip:"Like English P"},
-  {letter:"Q",name:"quê",   ipa:"/k/",                    example:"que",         meaning:"that/what",   tip:"Always followed by U (silent): QUE = 'keh'"},
-  {letter:"R",name:"erre",  ipa:"/ɾ/ or /ʁ/",             example:"restauração", meaning:"restoration", tip:"Middle of word: soft tap. Start or RR: deep guttural!"},
-  {letter:"S",name:"esse",  ipa:"/s/ or /ʃ/",             example:"Santos",      meaning:"Saints",      tip:"⚠️ Before consonants/at syllable end: the famous 'sh' hiss!"},
-  {letter:"T",name:"tê",    ipa:"/t/",                    example:"testemunho",  meaning:"testimony",   tip:"Like English T — never 'ch' like Brazilian"},
-  {letter:"U",name:"u",     ipa:"/u/",                    example:"unidade",     meaning:"unity",       tip:"Always clear 'oo' like in moon"},
-  {letter:"V",name:"vê",    ipa:"/v/",                    example:"verdade",     meaning:"truth",       tip:"Like English V"},
-  {letter:"W",name:"dáblio",ipa:"/v/ or /w/",             example:"watt",        meaning:"watt",        tip:"Rare — foreign words only"},
-  {letter:"X",name:"xis",   ipa:"/ʃ/ · /ks/ · /s/ · /z/",example:"exemplo",     meaning:"example",     tip:"⚠️ Usually 'sh' in pt-PT — the trickiest letter!"},
-  {letter:"Y",name:"ípsilon",ipa:"/i/",                   example:"yoga",        meaning:"yoga",        tip:"Rare — borrowed words only"},
-  {letter:"Z",name:"zê",    ipa:"/z/ or /ʃ/",             example:"zelo",        meaning:"zeal",        tip:"Z at start; 'sh' at syllable end in pt-PT"},
+  {letter:"A",name:"á",      phonetic:"AH",           ipa:"/a/ · /ɐ/",              example:"amor",        meaning:"love",        tip:"Open 'ah' when stressed; softer schwa /ɐ/ when unstressed"},
+  {letter:"B",name:"bê",     phonetic:"BAY",          ipa:"/b/",                    example:"bem",         meaning:"well/good",   tip:"Same as English B"},
+  {letter:"C",name:"cê",     phonetic:"SAY",          ipa:"/s/ or /k/",             example:"Cristo",      meaning:"Christ",      tip:'"S" before E/I; "K" before A/O/U'},
+  {letter:"D",name:"dê",     phonetic:"DAY",          ipa:"/d/",                    example:"Deus",        meaning:"God",         tip:"Softer than English D — never the 'j' used in Brazilian Portuguese"},
+  {letter:"E",name:"ê",      phonetic:"AY",           ipa:"/e/ · /ɛ/ · /ɨ/",       example:"evangelho",   meaning:"gospel",      tip:"⚠️ Often nearly SILENT at word endings in pt-PT!"},
+  {letter:"F",name:"éfe",    phonetic:"EH-feh",       ipa:"/f/",                    example:"fé",          meaning:"faith",       tip:"Exactly like English F"},
+  {letter:"G",name:"gê",     phonetic:"ZHAY",         ipa:"/ɡ/ or /ʒ/",             example:"graça",       meaning:"grace",       tip:"Hard G before A/O/U; soft 'zh' before E/I"},
+  {letter:"H",name:"agá",    phonetic:"ah-GAH",       ipa:"(always silent)",        example:"hora",        meaning:"hour",        tip:"⚠️ H is ALWAYS silent — hora = 'OH-rah'"},
+  {letter:"I",name:"i",      phonetic:"EE",           ipa:"/i/",                    example:"Igreja",      meaning:"church",      tip:"Always a clear 'ee' — never changes"},
+  {letter:"J",name:"jota",   phonetic:"ZHOH-tah",     ipa:"/ʒ/",                    example:"Jesus",       meaning:"Jesus",       tip:"The 's' in 'measure' — 'Zheh-ZOOSH' in pt-PT"},
+  {letter:"K",name:"capa",   phonetic:"KAH-pah",      ipa:"/k/",                    example:"quilómetro",  meaning:"kilometre",   tip:"Rare — mostly in foreign words"},
+  {letter:"L",name:"ele",    phonetic:"EH-leh",       ipa:"/l/",                    example:"luz",         meaning:"light",       tip:"Clear L at start; darker L at syllable end"},
+  {letter:"M",name:"eme",    phonetic:"EH-meh",       ipa:"/m/ (nasalizes)",        example:"missão",      meaning:"mission",     tip:"At syllable end, M nasalizes the vowel before it"},
+  {letter:"N",name:"ene",    phonetic:"EH-neh",       ipa:"/n/ (nasalizes)",        example:"nome",        meaning:"name",        tip:"Like M — nasalizes the preceding vowel"},
+  {letter:"O",name:"ó",      phonetic:"AW",           ipa:"/o/ · /ɔ/ · /u/",       example:"oração",      meaning:"prayer",      tip:"Unstressed O often sounds like 'oo' — unique to pt-PT!"},
+  {letter:"P",name:"pê",     phonetic:"PAY",          ipa:"/p/",                    example:"paz",         meaning:"peace",       tip:"Like English P"},
+  {letter:"Q",name:"quê",    phonetic:"KAY",          ipa:"/k/",                    example:"que",         meaning:"that/what",   tip:"Always followed by U (silent): QUE = 'keh'"},
+  {letter:"R",name:"erre",   phonetic:"EH-rreh",      ipa:"/ɾ/ or /ʁ/",             example:"restauração", meaning:"restoration", tip:"Middle of word: soft tap. Start or RR: deep guttural!"},
+  {letter:"S",name:"esse",   phonetic:"EH-seh",       ipa:"/s/ or /ʃ/",             example:"Santos",      meaning:"Saints",      tip:"⚠️ Before consonants/at syllable end: the famous 'sh' hiss!"},
+  {letter:"T",name:"tê",     phonetic:"TAY",          ipa:"/t/",                    example:"testemunho",  meaning:"testimony",   tip:"Like English T — never 'ch' like Brazilian"},
+  {letter:"U",name:"u",      phonetic:"OO",           ipa:"/u/",                    example:"unidade",     meaning:"unity",       tip:"Always clear 'oo' like in moon"},
+  {letter:"V",name:"vê",     phonetic:"VAY",          ipa:"/v/",                    example:"verdade",     meaning:"truth",       tip:"Like English V"},
+  {letter:"W",name:"dáblio", phonetic:"DAH-blee-oh",  ipa:"/v/ or /w/",             example:"watt",        meaning:"watt",        tip:"Rare — foreign words only"},
+  {letter:"X",name:"xis",    phonetic:"SHEESH",       ipa:"/ʃ/ · /ks/ · /s/ · /z/",example:"exemplo",     meaning:"example",     tip:"⚠️ Usually 'sh' in pt-PT — the trickiest letter!"},
+  {letter:"Y",name:"ípsilon",phonetic:"EEP-see-lon",  ipa:"/i/",                   example:"yoga",        meaning:"yoga",        tip:"Rare — borrowed words only"},
+  {letter:"Z",name:"zê",     phonetic:"ZAY",          ipa:"/z/ or /ʃ/",             example:"zelo",        meaning:"zeal",        tip:"Z at start; 'sh' at syllable end in pt-PT"},
 ];
 const SPECIAL_SOUNDS = [
   {combo:"LH",ipa:"/ʎ/",  example:"filho", meaning:"son",      tip:"Palatal L — like 'lli' in million.",      why:"família, trabalho, ilha...", clr:C.green},
@@ -586,47 +586,279 @@ function CountdownView({streak,alphaData,phraseData,cultureData,readerData}){
 // ══════════════════════════════════════════════════════════════════════════════
 //  ALPHABET VIEW
 // ══════════════════════════════════════════════════════════════════════════════
+
+// Reusable mic recording hook for a single target word/phrase
+function useLetterMic(target){
+  const [recording,setRecording]=useState(false);
+  const [transcript,setTranscript]=useState("");
+  const [score,setScore]=useState(null);
+  const recRef=useRef(null);
+  const start=()=>{
+    const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+    if(!SR){setTranscript("Speech recognition needs Chrome or Edge.");return;}
+    if(recording){recRef.current?.stop();setRecording(false);return;}
+    const rec=new SR();rec.lang="pt-PT";rec.continuous=false;rec.interimResults=false;
+    recRef.current=rec;
+    rec.onresult=e=>{
+      const said=e.results[0][0].transcript.trim();
+      setTranscript(said);
+      const cl=s=>s.toLowerCase().replace(/[.,!?;:]/g,"").trim();
+      const tW=cl(target).split(" "); const gW=cl(said).split(" ");
+      const mt=tW.filter(w=>gW.some(g=>g.includes(w.slice(0,3))||w.includes(g.slice(0,3)))).length;
+      setScore(Math.round((mt/tW.length)*100));
+    };
+    rec.onerror=()=>{setRecording(false);setTranscript("Could not hear — try again.");};
+    rec.onend=()=>setRecording(false);
+    rec.start();setRecording(true);setTranscript("");setScore(null);
+  };
+  const reset=()=>{setTranscript("");setScore(null);};
+  return{recording,transcript,score,start,reset};
+}
+
+// Mic result display strip (shared by letters + special sounds)
+function MicResult({transcript,score,recording,onStart,color}){
+  const clr=color||C.green;
+  return(<>
+    <button onClick={onStart} style={{background:recording?C.red:"rgba(255,255,255,0.14)",border:"none",borderRadius:"9px",padding:"8px 13px",color:C.onDark,fontSize:"13px",cursor:"pointer",display:"flex",alignItems:"center",gap:"6px",transition:"background 0.2s"}}>
+      {recording?"🔴 Listening…":"🎤 Say it"}
+    </button>
+    {transcript&&(
+      <div style={{marginTop:"10px",background:"rgba(0,0,0,0.2)",borderRadius:"10px",padding:"10px 13px"}}>
+        <div style={{fontSize:"10px",letterSpacing:"0.1em",textTransform:"uppercase",color:"rgba(248,242,228,0.6)",marginBottom:"3px"}}>You said</div>
+        <div style={{fontFamily:"Georgia,serif",fontSize:"14px",color:C.onDark,marginBottom:"7px"}}>"{transcript}"</div>
+        {score!==null&&(<>
+          <div style={{display:"flex",alignItems:"center",gap:"9px",marginBottom:"3px"}}>
+            <div style={{flex:1,height:"6px",background:"rgba(255,255,255,0.15)",borderRadius:"3px",overflow:"hidden"}}>
+              <div style={{width:`${score}%`,height:"100%",borderRadius:"3px",background:score>=80?"#4CAF50":score>=50?C.gold:C.red,transition:"width 0.6s"}}/>
+            </div>
+            <span style={{fontSize:"13px",fontWeight:"600",minWidth:"34px",color:score>=80?"#90EE90":score>=50?C.gold:"#FF9999"}}>{score}%</span>
+          </div>
+          <div style={{fontSize:"12px",color:score>=80?"#90EE90":score>=50?C.gold:"#FF9999"}}>
+            {score>=80?"🎉 Excellent pronunciation!":score>=50?"👍 Good — listen once more and retry!":"🔄 Listen carefully then try again!"}
+          </div>
+        </>)}
+      </div>
+    )}
+  </>);
+}
+
 function AlphabetView({alphaData,saveAlphaData}){
-  const [section,setSection]=useState("letters"); const [selected,setSelected]=useState(null); const [speaking,setSpeaking]=useState(null);
+  const [section,setSection]=useState("letters");
+  const [selected,setSelected]=useState(null);
+  const [speaking,setSpeaking]=useState(null);
+  // Song state
+  const [songPlaying,setSongPlaying]=useState(false);
+  const [songIdx,setSongIdx]=useState(-1);
+  const songRef=useRef(null);
+  // Per-letter mic (only one open at a time)
+  const [micLetter,setMicLetter]=useState(null); // letter key of open mic
+  const [micSpecial,setMicSpecial]=useState(null); // combo key of open mic
+
   const plays=alphaData.plays||{};
   const logPlay=(letter)=>{const p={...plays};p[letter]=(p[letter]||0)+1;saveAlphaData({...alphaData,plays:p});};
-  const doSpeak=(l,e)=>{e.stopPropagation();setSpeaking(l.letter);logPlay(l.letter);speakPT(l.letter.toLowerCase(),0.7);setTimeout(()=>speakPT(l.example,0.75),700);setTimeout(()=>setSpeaking(null),1800);};
-  const practicedCount=Object.keys(plays).length; const masteredCount=Object.values(plays).filter(v=>v>=3).length;
+  const doSpeak=(l,e)=>{e.stopPropagation();setSpeaking(l.letter);logPlay(l.letter);speakPT(l.name,0.75);setTimeout(()=>speakPT(l.example,0.82),900);setTimeout(()=>setSpeaking(null),2200);};
+  const practicedCount=Object.keys(plays).length;
+  const masteredCount=Object.values(plays).filter(v=>v>=3).length;
+
+  // ── Song playback ──
+  const playSong=()=>{
+    if(songPlaying){
+      setSongPlaying(false);setSongIdx(-1);
+      if(songRef.current){clearTimeout(songRef.current);}
+      window.speechSynthesis?.cancel();
+      return;
+    }
+    setSongPlaying(true);
+    let delay=0;
+    ALPHABET_DATA.forEach((l,i)=>{
+      songRef.current=setTimeout(()=>{
+        setSongIdx(i);
+        speakPT(l.name,0.8);
+        if(i===ALPHABET_DATA.length-1){
+          setTimeout(()=>{setSongPlaying(false);setSongIdx(-1);},1200);
+        }
+      },delay);
+      delay+=850;
+    });
+  };
+
+  // Per-letter mic component (inline, stateful)
+  function LetterMic({letter,name}){
+    const mic=useLetterMic(name);
+    if(micLetter!==letter) return(
+      <button onClick={()=>setMicLetter(letter)} style={{background:"rgba(255,255,255,0.14)",border:"none",borderRadius:"9px",padding:"8px 13px",color:C.onDark,fontSize:"13px",cursor:"pointer"}}>🎤 Say it</button>
+    );
+    return(
+      <div>
+        <MicResult {...mic} onStart={mic.start} color={C.green}/>
+        <button onClick={()=>{mic.reset();setMicLetter(null);}} style={{marginTop:"7px",background:"transparent",border:"none",color:"rgba(248,242,228,0.45)",fontSize:"11px",cursor:"pointer"}}>✕ Close mic</button>
+      </div>
+    );
+  }
+
+  // Per-special-sound mic component (inline, stateful)
+  function SpecialMic({combo,example,clr}){
+    const mic=useLetterMic(example);
+    if(micSpecial!==combo) return(
+      <button onClick={()=>setMicSpecial(combo)} style={{background:clr,border:"none",borderRadius:"9px",padding:"9px 12px",color:C.onDark,fontSize:"13px",cursor:"pointer",flexShrink:0}}>🎤</button>
+    );
+    return(
+      <div style={{background:`${clr}22`,border:`1px solid ${clr}`,borderRadius:"12px",padding:"12px",marginTop:"8px",width:"100%"}}>
+        <div style={{fontSize:"10px",letterSpacing:"0.1em",textTransform:"uppercase",color:clr,marginBottom:"7px",fontWeight:"500"}}>Say: "{example}"</div>
+        <MicResult {...mic} onStart={mic.start} color={clr}/>
+        <button onClick={()=>{mic.reset();setMicSpecial(null);}} style={{marginTop:"6px",background:"transparent",border:"none",color:C.faint,fontSize:"11px",cursor:"pointer"}}>✕ Close</button>
+      </div>
+    );
+  }
+
   return(
     <div style={{padding:"1.5rem 0"}}>
+      {/* Progress bars */}
       <div style={{background:C.surface,border:`0.5px solid ${C.border}`,borderRadius:"12px",padding:"12px 16px",marginBottom:"14px",display:"flex",gap:"18px"}}>
         <div style={{flex:1}}><div style={{display:"flex",justifyContent:"space-between",marginBottom:"5px"}}><span style={{fontSize:"12px",color:C.muted}}>Letters heard</span><span style={{fontSize:"12px",fontWeight:"500",color:C.green}}>{practicedCount}/26</span></div><div style={{height:"6px",background:C.border,borderRadius:"3px",overflow:"hidden"}}><div style={{width:`${(practicedCount/26)*100}%`,height:"100%",background:C.green,borderRadius:"3px",transition:"width 0.5s"}}/></div></div>
         <div style={{flex:1}}><div style={{display:"flex",justifyContent:"space-between",marginBottom:"5px"}}><span style={{fontSize:"12px",color:C.muted}}>Mastered (3+)</span><span style={{fontSize:"12px",fontWeight:"500",color:C.gold}}>{masteredCount}/26</span></div><div style={{height:"6px",background:C.border,borderRadius:"3px",overflow:"hidden"}}><div style={{width:`${(masteredCount/26)*100}%`,height:"100%",background:C.gold,borderRadius:"3px",transition:"width 0.5s"}}/></div></div>
       </div>
-      <div style={{display:"flex",gap:"8px",marginBottom:"14px"}}>
-        {[{id:"letters",label:"🔡 The 26 Letters"},{id:"special",label:"⚡ Special Sounds"}].map(s=>(<button key={s.id} onClick={()=>{setSection(s.id);setSelected(null);}} style={{padding:"9px 18px",borderRadius:"10px",fontSize:"13px",cursor:"pointer",border:section===s.id?"none":`0.5px solid ${C.border}`,background:section===s.id?C.green:"transparent",color:section===s.id?C.onDark:C.muted,fontWeight:section===s.id?"500":"400"}}>{s.label}</button>))}
+
+      {/* Section tabs */}
+      <div style={{display:"flex",gap:"7px",marginBottom:"14px",flexWrap:"wrap"}}>
+        {[{id:"letters",label:"🔡 The 26 Letters"},{id:"special",label:"⚡ Special Sounds"},{id:"song",label:"🎵 Alphabet Song"}].map(s=>(
+          <button key={s.id} onClick={()=>{setSection(s.id);setSelected(null);setMicLetter(null);setMicSpecial(null);}}
+            style={{padding:"9px 16px",borderRadius:"10px",fontSize:"13px",cursor:"pointer",border:section===s.id?"none":`0.5px solid ${C.border}`,background:section===s.id?C.green:"transparent",color:section===s.id?C.onDark:C.muted,fontWeight:section===s.id?"500":"400"}}>
+            {s.label}
+          </button>
+        ))}
       </div>
+
+      {/* ── LETTERS ── */}
       {section==="letters"&&(<>
-        <p style={{fontSize:"13px",color:C.muted,lineHeight:1.7,marginBottom:"12px"}}>Tap a letter to expand. 🔊 plays the letter name then an example word in <strong style={{color:C.green}}>European Portuguese</strong>. A letter is <strong style={{color:C.gold}}>⭐ mastered</strong> after 3 plays. Progress saved.</p>
+        <p style={{fontSize:"13px",color:C.muted,lineHeight:1.7,marginBottom:"12px"}}>Tap a letter to expand. 🔊 plays the <em>letter name</em> then an example word. 🎤 lets you say the letter name and get a score. ⭐ mastered after 3 plays.</p>
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(62px,1fr))",gap:"6px",marginBottom:"14px"}}>
-          {ALPHABET_DATA.map(l=>{const count=plays[l.letter]||0;const mastered=count>=3;const practiced=count>0;const isSel=selected?.letter===l.letter;return(<button key={l.letter} onClick={()=>setSelected(isSel?null:l)} style={{background:isSel?C.green:mastered?C.softGold:practiced?"rgba(4,106,56,0.06)":C.surface,border:isSel?"none":mastered?`1.5px solid ${C.gold}`:practiced?`1px solid ${C.green}`:`0.5px solid ${C.border}`,borderRadius:"11px",padding:"10px 5px",cursor:"pointer",textAlign:"center",position:"relative"}}>{mastered&&!isSel&&<div style={{position:"absolute",top:"3px",right:"3px",fontSize:"8px"}}>⭐</div>}<div style={{fontFamily:"Georgia,serif",fontSize:"23px",lineHeight:1,color:isSel?C.onDark:practiced?C.green:C.ink}}>{l.letter}</div><div style={{fontSize:"9px",marginTop:"2px",color:isSel?"rgba(248,242,228,0.65)":C.faint}}>{l.name}</div>{count>0&&!isSel&&<div style={{fontSize:"9px",color:mastered?C.ochre:C.green,marginTop:"1px"}}>{count>=3?"✓×"+count:"×"+count}</div>}</button>);})}
+          {ALPHABET_DATA.map(l=>{
+            const count=plays[l.letter]||0;const mastered=count>=3;const practiced=count>0;const isSel=selected?.letter===l.letter;
+            return(<button key={l.letter} onClick={()=>{setSelected(isSel?null:l);setMicLetter(null);}}
+              style={{background:isSel?C.green:mastered?C.softGold:practiced?"rgba(4,106,56,0.06)":C.surface,border:isSel?"none":mastered?`1.5px solid ${C.gold}`:practiced?`1px solid ${C.green}`:`0.5px solid ${C.border}`,borderRadius:"11px",padding:"10px 5px",cursor:"pointer",textAlign:"center",position:"relative"}}>
+              {mastered&&!isSel&&<div style={{position:"absolute",top:"3px",right:"3px",fontSize:"8px"}}>⭐</div>}
+              <div style={{fontFamily:"Georgia,serif",fontSize:"23px",lineHeight:1,color:isSel?C.onDark:practiced?C.green:C.ink}}>{l.letter}</div>
+              <div style={{fontSize:"9px",marginTop:"2px",color:isSel?"rgba(248,242,228,0.65)":C.faint}}>{l.name}</div>
+              {count>0&&!isSel&&<div style={{fontSize:"9px",color:mastered?C.ochre:C.green,marginTop:"1px"}}>{count>=3?"✓×"+count:"×"+count}</div>}
+            </button>);
+          })}
         </div>
+
         {selected&&(
           <div style={{background:C.green,borderRadius:"18px",padding:"22px",boxShadow:"0 4px 14px rgba(4,106,56,0.25)"}}>
             <div style={{display:"flex",height:"3px",borderRadius:"2px",overflow:"hidden",marginBottom:"14px"}}><div style={{flex:2,background:"rgba(255,255,255,0.25)"}}/><div style={{flex:3,background:C.red}}/></div>
+            {/* Letter + speak button */}
             <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:"14px"}}>
-              <div><span style={{fontFamily:"Georgia,serif",fontSize:"50px",color:C.onDark,lineHeight:1}}>{selected.letter}</span><span style={{fontFamily:"Georgia,serif",fontSize:"50px",color:"rgba(248,242,228,0.3)",lineHeight:1,marginLeft:"8px"}}>{selected.letter.toLowerCase()}</span><div style={{fontSize:"13px",color:"rgba(248,242,228,0.6)",marginTop:"3px"}}>Named: "{selected.name}" · Played: {plays[selected.letter]||0}×{(plays[selected.letter]||0)>=3&&<span style={{color:C.gold}}> ⭐ Mastered!</span>}</div></div>
+              <div>
+                <span style={{fontFamily:"Georgia,serif",fontSize:"50px",color:C.onDark,lineHeight:1}}>{selected.letter}</span>
+                <span style={{fontFamily:"Georgia,serif",fontSize:"50px",color:"rgba(248,242,228,0.3)",lineHeight:1,marginLeft:"8px"}}>{selected.letter.toLowerCase()}</span>
+                <div style={{fontSize:"13px",color:"rgba(248,242,228,0.6)",marginTop:"3px"}}>
+                  Played: {plays[selected.letter]||0}×{(plays[selected.letter]||0)>=3&&<span style={{color:C.gold}}> ⭐ Mastered!</span>}
+                </div>
+              </div>
               <button onClick={e=>doSpeak(selected,e)} style={{background:speaking===selected.letter?C.red:"rgba(255,255,255,0.14)",border:"none",borderRadius:"12px",padding:"12px 16px",color:C.onDark,fontSize:"22px",cursor:"pointer",transition:"background 0.2s",flexShrink:0}}>🔊</button>
             </div>
-            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"10px",marginBottom:"11px"}}>
-              <div style={{background:"rgba(255,255,255,0.1)",borderRadius:"10px",padding:"13px"}}><div style={{fontSize:"10px",letterSpacing:"0.1em",textTransform:"uppercase",color:"rgba(200,165,39,0.85)",marginBottom:"4px"}}>IPA sound</div><div style={{fontFamily:"Georgia,serif",fontSize:"19px",color:C.onDark}}>{selected.ipa}</div></div>
-              <div style={{background:"rgba(255,255,255,0.1)",borderRadius:"10px",padding:"13px"}}><div style={{fontSize:"10px",letterSpacing:"0.1em",textTransform:"uppercase",color:"rgba(200,165,39,0.85)",marginBottom:"4px"}}>Mission word</div><div style={{fontSize:"17px",color:C.onDark}}>{selected.example}</div><div style={{fontSize:"12px",color:"rgba(248,242,228,0.5)"}}>{selected.meaning}</div></div>
+
+            {/* Name + phonetic */}
+            <div style={{background:"rgba(255,255,255,0.12)",borderRadius:"10px",padding:"13px",marginBottom:"10px"}}>
+              <div style={{fontSize:"10px",letterSpacing:"0.1em",textTransform:"uppercase",color:"rgba(200,165,39,0.85)",marginBottom:"6px"}}>Letter Name in Portuguese</div>
+              <div style={{display:"flex",alignItems:"baseline",gap:"14px",flexWrap:"wrap"}}>
+                <div style={{fontFamily:"Georgia,serif",fontSize:"26px",color:C.onDark,lineHeight:1}}>{selected.name}</div>
+                <div style={{fontSize:"14px",color:"rgba(248,242,228,0.65)"}}>≈ say it like: <span style={{fontFamily:"Georgia,serif",fontSize:"16px",color:C.gold,fontWeight:"600",letterSpacing:"0.04em"}}>{selected.phonetic}</span></div>
+              </div>
             </div>
-            <div style={{background:"rgba(200,165,39,0.18)",borderRadius:"10px",padding:"13px",borderLeft:`3px solid ${C.gold}`}}><div style={{fontSize:"10px",letterSpacing:"0.1em",textTransform:"uppercase",color:C.gold,marginBottom:"4px"}}>Pronunciation tip</div><div style={{fontSize:"13px",color:C.onDark,lineHeight:1.6}}>{selected.tip}</div></div>
+
+            {/* IPA + Mission word */}
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"10px",marginBottom:"11px"}}>
+              <div style={{background:"rgba(255,255,255,0.1)",borderRadius:"10px",padding:"13px"}}>
+                <div style={{fontSize:"10px",letterSpacing:"0.1em",textTransform:"uppercase",color:"rgba(200,165,39,0.85)",marginBottom:"4px"}}>IPA sound</div>
+                <div style={{fontFamily:"Georgia,serif",fontSize:"18px",color:C.onDark}}>{selected.ipa}</div>
+              </div>
+              <div style={{background:"rgba(255,255,255,0.1)",borderRadius:"10px",padding:"13px"}}>
+                <div style={{fontSize:"10px",letterSpacing:"0.1em",textTransform:"uppercase",color:"rgba(200,165,39,0.85)",marginBottom:"4px"}}>Mission word</div>
+                <div style={{fontSize:"17px",color:C.onDark}}>{selected.example}</div>
+                <div style={{fontSize:"12px",color:"rgba(248,242,228,0.5)"}}>{selected.meaning}</div>
+              </div>
+            </div>
+
+            {/* Tip */}
+            <div style={{background:"rgba(200,165,39,0.18)",borderRadius:"10px",padding:"13px",borderLeft:`3px solid ${C.gold}`,marginBottom:"13px"}}>
+              <div style={{fontSize:"10px",letterSpacing:"0.1em",textTransform:"uppercase",color:C.gold,marginBottom:"4px"}}>Pronunciation tip</div>
+              <div style={{fontSize:"13px",color:C.onDark,lineHeight:1.6}}>{selected.tip}</div>
+            </div>
+
+            {/* Microphone */}
+            <div style={{background:"rgba(0,0,0,0.15)",borderRadius:"12px",padding:"14px"}}>
+              <div style={{fontSize:"10px",letterSpacing:"0.1em",textTransform:"uppercase",color:"rgba(248,242,228,0.6)",marginBottom:"9px"}}>🎤 Practice — Say the letter name: <span style={{color:C.gold,fontFamily:"Georgia,serif",fontSize:"13px"}}>{selected.name}</span></div>
+              <LetterMic letter={selected.letter} name={selected.name}/>
+            </div>
           </div>
         )}
       </>)}
+
+      {/* ── SPECIAL SOUNDS ── */}
       {section==="special"&&(<>
-        <p style={{fontSize:"13px",color:C.muted,lineHeight:1.7,marginBottom:"12px"}}>These combinations define European Portuguese. Each has a colour from Porto's regional palette.</p>
+        <p style={{fontSize:"13px",color:C.muted,lineHeight:1.7,marginBottom:"12px"}}>These combinations define European Portuguese. 🔊 hears the example word · 🎤 records your attempt and scores it.</p>
         <div style={{display:"flex",flexDirection:"column",gap:"9px"}}>
-          {SPECIAL_SOUNDS.map(s=>(<div key={s.combo} style={{background:C.surface,border:`0.5px solid ${C.border}`,borderRadius:"14px",padding:"15px",display:"flex",gap:"13px",alignItems:"flex-start"}}><div style={{background:s.clr,color:C.onDark,borderRadius:"10px",width:"54px",height:"54px",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"Georgia,serif",fontSize:"18px",fontWeight:"600",flexShrink:0,letterSpacing:"1px"}}>{s.combo}</div><div style={{flex:1}}><div style={{display:"flex",alignItems:"baseline",gap:"8px",flexWrap:"wrap",marginBottom:"3px"}}><span style={{fontFamily:"Georgia,serif",fontSize:"16px",color:C.ink}}>"{s.example}"</span><span style={{fontSize:"12px",color:C.muted}}>= {s.meaning}</span><span style={{fontFamily:"Georgia,serif",fontSize:"11px",color:s.clr}}>{s.ipa}</span></div><div style={{fontSize:"13px",color:C.ink,lineHeight:1.5,marginBottom:"5px"}}>{s.tip}</div><div style={{fontSize:"11px",color:C.faint,background:C.border,padding:"3px 9px",borderRadius:"6px",display:"inline-block"}}>Common: {s.why}</div></div><button onClick={()=>speakPT(s.example,0.75)} style={{background:s.clr,border:"none",borderRadius:"9px",padding:"9px 12px",color:C.onDark,fontSize:"18px",cursor:"pointer",flexShrink:0}}>🔊</button></div>))}
+          {SPECIAL_SOUNDS.map(s=>(
+            <div key={s.combo} style={{background:C.surface,border:`0.5px solid ${C.border}`,borderRadius:"14px",padding:"15px",display:"flex",gap:"13px",alignItems:"flex-start",flexWrap:"wrap"}}>
+              <div style={{background:s.clr,color:C.onDark,borderRadius:"10px",width:"54px",height:"54px",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"Georgia,serif",fontSize:"18px",fontWeight:"600",flexShrink:0,letterSpacing:"1px"}}>{s.combo}</div>
+              <div style={{flex:1,minWidth:"180px"}}>
+                <div style={{display:"flex",alignItems:"baseline",gap:"8px",flexWrap:"wrap",marginBottom:"3px"}}>
+                  <span style={{fontFamily:"Georgia,serif",fontSize:"16px",color:C.ink}}>"{s.example}"</span>
+                  <span style={{fontSize:"12px",color:C.muted}}>= {s.meaning}</span>
+                  <span style={{fontFamily:"Georgia,serif",fontSize:"11px",color:s.clr}}>{s.ipa}</span>
+                </div>
+                <div style={{fontSize:"13px",color:C.ink,lineHeight:1.5,marginBottom:"5px"}}>{s.tip}</div>
+                <div style={{fontSize:"11px",color:C.faint,background:C.border,padding:"3px 9px",borderRadius:"6px",display:"inline-block",marginBottom:"9px"}}>Common: {s.why}</div>
+                {/* Mic panel */}
+                <SpecialMic combo={s.combo} example={s.example} clr={s.clr}/>
+              </div>
+              <button onClick={()=>speakPT(s.example,0.75)} style={{background:s.clr,border:"none",borderRadius:"9px",padding:"9px 12px",color:C.onDark,fontSize:"18px",cursor:"pointer",flexShrink:0}}>🔊</button>
+            </div>
+          ))}
         </div>
       </>)}
+
+      {/* ── ALPHABET SONG ── */}
+      {section==="song"&&(
+        <div>
+          <div style={{background:C.surface,border:`0.5px solid ${C.border}`,borderRadius:"16px",padding:"20px",marginBottom:"16px",textAlign:"center"}}>
+            <div style={{fontSize:"32px",marginBottom:"8px"}}>🎵</div>
+            <h3 style={{fontFamily:"Georgia,serif",fontSize:"20px",fontWeight:"400",color:C.green,marginBottom:"6px"}}>O Alfabeto Português</h3>
+            <p style={{fontSize:"13px",color:C.muted,lineHeight:1.7,marginBottom:"16px"}}>Each letter name is spoken in European Portuguese in sequence, with rhythm between each one. Listen along, then try saying each name as it lights up!</p>
+            <button onClick={playSong} style={{background:songPlaying?C.red:C.green,border:"none",borderRadius:"14px",padding:"13px 32px",color:C.onDark,fontSize:"15px",fontWeight:"600",cursor:"pointer",boxShadow:`0 3px 12px ${songPlaying?C.red:C.green}55`,transition:"all 0.2s"}}>
+              {songPlaying?"⏹ Stop Song":"▶ Play Alphabet Song"}
+            </button>
+            {songPlaying&&<div style={{fontSize:"12px",color:C.muted,marginTop:"10px"}}>Now playing: <span style={{color:C.green,fontWeight:"500"}}>{ALPHABET_DATA[songIdx]?.name||"…"}</span></div>}
+          </div>
+
+          {/* Letter grid — lights up as song plays */}
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(62px,1fr))",gap:"6px"}}>
+            {ALPHABET_DATA.map((l,i)=>{
+              const active=songIdx===i;
+              const count=plays[l.letter]||0;
+              const mastered=count>=3;
+              return(
+                <div key={l.letter} style={{
+                  background:active?C.green:mastered?C.softGold:C.surface,
+                  border:active?`2px solid ${C.gold}`:mastered?`1.5px solid ${C.gold}`:`0.5px solid ${C.border}`,
+                  borderRadius:"11px",padding:"10px 5px",textAlign:"center",
+                  transition:"all 0.2s",
+                  transform:active?"scale(1.08)":"scale(1)",
+                  boxShadow:active?`0 4px 14px rgba(4,106,56,0.35)`:"none",
+                }}>
+                  <div style={{fontFamily:"Georgia,serif",fontSize:"23px",lineHeight:1,color:active?C.onDark:mastered?C.green:C.ink}}>{l.letter}</div>
+                  <div style={{fontSize:"9px",marginTop:"3px",color:active?"rgba(248,242,228,0.85)":C.faint}}>{l.name}</div>
+                  <div style={{fontSize:"9px",marginTop:"1px",color:active?C.gold:C.faint,fontFamily:"Georgia,serif"}}>{l.phonetic}</div>
+                </div>
+              );
+            })}
+          </div>
+          <p style={{fontSize:"12px",color:C.faint,textAlign:"center",marginTop:"14px",lineHeight:1.6}}>Each tile shows the letter, its Portuguese name, and the English phonetic approximation.<br/>Tap <strong>🔡 The 26 Letters</strong> to study any letter individually.</p>
+        </div>
+      )}
     </div>
   );
 }
